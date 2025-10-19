@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react';
-// import Header from './Header';
+import Header from './Header';
 // import Footer from './Footer';
 
 function Layout({ children }) {
@@ -16,21 +16,26 @@ function Layout({ children }) {
 //   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-base-100">
+   <div className="flex min-h-screen bg-base-100">
       {/* Skip to main content link for accessibility */}
       <a 
         href="#main-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded-lg"
+        className="
+          sr-only focus:not-sr-only 
+          focus:absolute focus:top-4 focus:left-4 focus:z-50 
+          focus:px-4 focus:py-2 
+          focus:bg-primary focus:text-white focus:rounded-lg"
       >
         Skip to main content
       </a>
 
-      {/* <Header /> */}
+      {/* Header component (sidebar on desktop, top bar on mobile) */}
+      <Header />
       
-      {/* Main content area */}
+      {/* Main content area - offset for sidebar on desktop */}
       <main 
         id="main-content"
-        className="flex-grow w-full"
+        className="flex-1 w-full md:ml-0 lg:ml-64"
         role="main"
       >
         {children}
