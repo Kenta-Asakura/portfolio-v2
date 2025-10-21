@@ -67,6 +67,7 @@ function Header() {
       threshold: 0
     };
 
+    // ?
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -89,7 +90,11 @@ function Header() {
     <>
       {/* Mobile Top Bar - Only visible on mobile/tablet */}
       <header 
-        className="lg:hidden fixed top-0 left-0 right-0 z-40 bg-base-100/95 backdrop-blur-sm shadow-md"
+        className="
+          lg:hidden fixed top-0 left-0 right-0 
+          z-40 bg-base-100/95 
+          backdrop-blur-sm 
+          shadow-md"
         role="banner"
       >
         <nav className="container mx-auto px-4">
@@ -97,7 +102,10 @@ function Header() {
             {/* Logo */}
             <a 
               href="#hero" 
-              className="text-xl font-bold text-primary hover:text-primary-focus transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg px-2 py-1"
+              className="
+                text-xl font-bold text-primary hover:text-primary-focus 
+                transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 
+                rounded-lg px-2 py-1"
               onClick={handleNavClick}
             >
               Your Name
@@ -106,7 +114,9 @@ function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-lg hover:bg-base-200 focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
+              className="
+                p-2 rounded-lg hover:bg-base-200 
+                focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
@@ -148,11 +158,15 @@ function Header() {
                   <a
                     href={link.href}
                     onClick={handleNavClick}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg text-lg font-medium transition-colors hover:bg-base-200 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary ${
-                      activeSection === link.href.slice(1) 
+                    className={`
+                      flex items-center gap-3 px-4 py-3 
+                      rounded-lg text-lg font-medium 
+                      transition-colors hover:bg-base-200 hover:text-primary 
+                      focus:outline-none focus:ring-2 focus:ring-primary 
+                      ${activeSection === link.href.slice(1) 
                         ? 'text-primary bg-base-200' 
                         : 'text-base-content'
-                    }`}
+                      }`}
                     aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
                   >
                     <span className="text-2xl">{link.icon}</span>
@@ -172,7 +186,12 @@ function Header() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center px-4 py-2 rounded-lg bg-base-200 hover:bg-base-300 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="
+                      flex-1 flex items-center justify-center 
+                      px-4 py-2 rounded-lg 
+                      bg-base-200 hover:bg-base-300 
+                      hover:text-primary transition-colors 
+                      focus:outline-none focus:ring-2 focus:ring-primary"
                     aria-label={social.name}
                   >
                     <span className="font-bold">{social.icon}</span>
@@ -186,7 +205,10 @@ function Header() {
 
       {/* Desktop Sidebar - Hidden on mobile/tablet */}
       <aside 
-        className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col bg-base-100 border-r border-base-300 z-40"
+        className="
+          hidden lg:flex fixed left-0 top-0 
+          h-screen w-64 flex-col 
+          bg-base-100 border-r border-base-300 z-40"
         role="navigation"
         aria-label="Main navigation"
       >
@@ -208,11 +230,16 @@ function Header() {
                   <a
                     href={link.href}
                     onClick={handleNavClick}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-all hover:bg-base-200 hover:text-primary hover:translate-x-1 focus:outline-none focus:ring-2 focus:ring-primary ${
-                      activeSection === link.href.slice(1) 
+                    className={`
+                      flex items-center gap-3 
+                      px-4 py-3 rounded-lg 
+                      font-medium transition-all 
+                      hover:bg-base-200 hover:text-primary hover:translate-x-1 
+                      focus:outline-none focus:ring-2 focus:ring-primary 
+                      ${activeSection === link.href.slice(1) 
                         ? 'text-primary bg-base-200 translate-x-1' 
                         : 'text-base-content'
-                    }`}
+                      }`}
                     aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
                   >
                     <span className="text-xl">{link.icon}</span>
@@ -233,7 +260,8 @@ function Header() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-lg bg-base-200 hover:bg-base-300 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="
+                    flex items-center justify-center w-10 h-10 rounded-lg bg-base-200 hover:bg-base-300 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
                   aria-label={social.name}
                 >
                   <span className="font-bold text-sm">{social.icon}</span>
