@@ -1,4 +1,6 @@
 function Footer() {
+  const currentYear = new Date().getFullYear();
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -65,6 +67,16 @@ function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Copyright - Mobile: centered, Desktop: right */}
+          <div className="text-center md:text-right">
+            <p className="text-sm text-base-content/70">
+              © {currentYear} Your Name. All rights reserved.
+            </p>
+            <p className="text-xs text-base-content/60 mt-1">
+              Built with React, Tailwind CSS, and DaisyUI
+            </p>
           </div>
         </div>
       </div>
