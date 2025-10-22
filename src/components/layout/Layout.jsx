@@ -1,6 +1,6 @@
 // import { useState, useEffect } from 'react';
 import Header from './Header';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 function Layout({ children }) {
   // For SSR - Uncomment the following lines to handle hydration issues
@@ -41,7 +41,7 @@ function Layout({ children }) {
         {children}
       </main>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
