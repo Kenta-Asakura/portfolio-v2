@@ -43,7 +43,30 @@ function Footer() {
       className="bg-base-200 border-t border-base-300 mt-auto"
       role="contentinfo"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">       
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        {/* Mobile: Stack vertically, Desktop: Flex row */}
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-4">
+          
+          {/* Social Links - Mobile: centered, Desktop: left */}
+          <div className="flex justify-center md:justify-start">
+            <ul className="flex gap-4" aria-label="Social media links">
+              {socialLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-lg hover:bg-base-300 text-base-content hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                    <span className="sr-only">{link.name}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </footer>
   );
