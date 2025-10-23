@@ -17,6 +17,7 @@ function Layout({ children }) {
 
   return (
    <div className="flex min-h-screen bg-base-100">
+
       {/* Skip to main content link for accessibility */}
       <a 
         href="#main-content" 
@@ -29,19 +30,21 @@ function Layout({ children }) {
         Skip to main content
       </a>
 
-      {/* Header component (sidebar on desktop, top bar on mobile) */}
-      <Header />
-      
-      {/* Main content area - offset for sidebar on desktop */}
-      <main 
-        id="main-content"
-        className="flex-1 w-full md:ml-0 lg:ml-64"
-        role="main"
-      >
-        {children}
-      </main>
+      <div className="min-h-screen w-full bg-base-100">
+        <Header />
+        
+        <div className="lg:pl-64">
+          <div className="flex flex-col min-h-screen">
+            {/* Mobile header spacer */}
+            <div className="h-16 lg:hidden" aria-hidden="true" />
+            
+            <main className="flex-grow w-full">{children}</main>
+            
+            <Footer /> 
+          </div>
+        </div>
+      </div>
 
-      <Footer />
     </div>
   );
 }
