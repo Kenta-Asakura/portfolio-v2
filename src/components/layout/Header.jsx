@@ -112,31 +112,43 @@ function Header() {
             </a>
 
             {/* Mobile Menu Button */}
-            <button
+            <button  
+              className="btn btn-circle swap swap-rotate"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="
-                p-2 rounded-lg hover:bg-base-200 
-                focus:outline-none focus:ring-2 focus:ring-primary transition-colors"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
             >
+              <input 
+                type="checkbox" 
+                checked={isMenuOpen}
+                onChange={() => {}} // Controlled by onClick above
+                aria-hidden="true"
+                tabIndex={-1}
+              />
+
+              {/* hamburger icon */}
               <svg
-                className="w-6 h-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
+                className="swap-off fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 512 512">
+                <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+              </svg>
+
+              {/* close icon */}
+              <svg
+                className="swap-on fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 512 512">
+                <polygon
+                  points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
               </svg>
             </button>
+            
           </div>
         </nav>
       </header>
