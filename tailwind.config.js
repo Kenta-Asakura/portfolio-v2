@@ -1,11 +1,12 @@
-module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+import daisyui from "daisyui";
+
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+  plugins: [daisyui],
 }
