@@ -1,8 +1,9 @@
 // import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import Hero from '../Sections/Hero';
 
-function Layout({ children }) {
+function Layout() {
   // For SSR - Uncomment the following lines to handle hydration issues
 
 //  const [mounted, setMounted] = useState(false);
@@ -43,7 +44,7 @@ function Layout({ children }) {
           role="main"
           aria-label="Main content"
         >
-          {children}
+          <Hero />
         </main>
 
         <Footer />

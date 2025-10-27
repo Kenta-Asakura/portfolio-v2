@@ -198,7 +198,7 @@ function Header() {
             </ul>
 
             {/* Social Links */}
-            <ul className="pt-6 border-t border-base-300">
+            {/* <ul className="pt-6 border-t border-base-300">
               <p className="text-sm text-base-content/60 mb-3 px-4">Connect with me</p>
 
               <li className="flex gap-2">
@@ -220,7 +220,7 @@ function Header() {
                   </a>
                 ))}
               </li>
-            </ul>
+            </ul> */}
           </div>
           
         </nav>
