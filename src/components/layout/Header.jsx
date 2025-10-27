@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
-  { name: 'About', href: '#about', icon: '👤' },
-  { name: 'Skills', href: '#skills', icon: '⚡' },
-  { name: 'Projects', href: '#projects', icon: '💼' },
-  { name: 'Experience', href: '#experience', icon: '🎯' },
-  { name: 'Contact', href: '#contact', icon: '📧' }
+  { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Contact', href: '#contact' }
 ];
 
 const SOCIAL_LINKS = [
@@ -156,8 +156,8 @@ function Header() {
        
         <nav className="drawer-side">
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-          
-          <div className="menu bg-base-200 min-h-full w-80 p-4">
+
+          <div className="menu justify-between bg-base-200 min-h-full w-32 p-4">
             <a 
               href="#hero"
               onClick={handleNavClick}
@@ -174,9 +174,8 @@ function Header() {
                     href={link.href}
                     onClick={handleNavClick}
                     className={`
-                      flex items-center gap-3 
-                      px-4 py-3 rounded-lg 
-                      font-medium transition-all 
+                      flex items-center gap-3 rounded-lg 
+                      text-sm font-medium transition-all 
                       hover:bg-base-200 hover:text-primary hover:translate-x-1 
                       focus:outline-none focus:ring-2 focus:ring-primary 
                       ${activeSection === link.href.slice(1) 
@@ -185,7 +184,6 @@ function Header() {
                       }`}
                     aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
                   >
-                    <span className="text-xl">{link.icon}</span>
                     {link.name}
                   </a>
                 </li>
@@ -193,7 +191,7 @@ function Header() {
             </ul>
 
             {/* Social Links */}
-            <ul className="mt-auto pt-6 border-t border-base-300">
+            <ul className="pt-6 border-t border-base-300">
               <p className="text-sm text-base-content/60 mb-3 px-4">Connect with me</p>
 
               <li className="flex gap-2">
