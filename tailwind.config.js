@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // module.exports = {
 export default {
   content: [
@@ -5,6 +6,15 @@ export default {
     './src/**/*.{js,jsx}'
   ],
 
+=======
+import daisyui from "daisyui";
+
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+>>>>>>> origin/master
   theme: {
     extend: {
       fontFamily: {
@@ -13,6 +23,7 @@ export default {
       },
     },
   },
+<<<<<<< HEAD
 
 
   plugins: [require("daisyui")],
@@ -45,4 +56,7 @@ export default {
       },
     ],
   },
+=======
+  plugins: [daisyui],
+>>>>>>> origin/master
 }

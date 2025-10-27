@@ -103,16 +103,18 @@ function Header() {
               K
             </a>
 
-            {/* Mobile Menu Button - Now controls the drawer */}
+            {/* Mobile Menu Button */}
             <label 
               htmlFor="my-drawer-3"
               className="btn btn-circle swap swap-rotate drawer-button"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+              onClick={() => setIsMenuOpen((prev) => !prev)}
             >
               <input 
                 type="checkbox" 
                 checked={isMenuOpen}
-                onChange={() => {}}
+                onChange={(e) => setIsMenuOpen(e.target.checked)}
                 aria-hidden="true"
                 tabIndex={-1}
               />
@@ -155,9 +157,20 @@ function Header() {
         />
        
         <nav className="drawer-side">
+<<<<<<< HEAD
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
 
           <div className="menu justify-between bg-base-200 min-h-full w-32 p-4">
+=======
+          <label 
+            htmlFor="my-drawer-3"
+            aria-label="close sidebar"
+            className="drawer-overlay"
+            onClick={() => setIsMenuOpen(false)} // Close on overlay click
+          ></label>
+          
+          <div className="menu bg-base-200 min-h-full w-80 p-4">
+>>>>>>> origin/master
             <a 
               href="#hero"
               onClick={handleNavClick}
@@ -166,7 +179,7 @@ function Header() {
               <h1 className="text-2xl font-bold text-primary">K</h1>
             </a>
 
-            {/* Sidebar content here */}
+            {/* Sidebar content */}
             <ul>
               {NAV_LINKS.map((link) => (
                 <li key={link.name}>
