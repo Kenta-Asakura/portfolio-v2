@@ -157,11 +157,6 @@ function Header() {
         />
        
         <nav className="drawer-side">
-<<<<<<< HEAD
-          <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-
-          <div className="menu justify-between bg-base-200 min-h-full w-32 p-4">
-=======
           <label 
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
@@ -170,7 +165,6 @@ function Header() {
           ></label>
           
           <div className="menu bg-base-200 min-h-full w-80 p-4">
->>>>>>> origin/master
             <a 
               href="#hero"
               onClick={handleNavClick}
