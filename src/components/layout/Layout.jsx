@@ -34,7 +34,7 @@ function Layout({ children }) {
       <Header />
       
      {/* Main content container */}
-      <div className="flex-grow flex-col min-h-screen">
+      <div className="grow flex-col min-h-screen">
         {/* Mobile header spacer - accounts for fixed mobile header */}
         <div className="h-16 lg:hidden" aria-hidden="true" />
 
