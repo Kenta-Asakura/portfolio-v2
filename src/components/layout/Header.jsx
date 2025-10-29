@@ -17,6 +17,7 @@ const SOCIAL_LINKS = [
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [showSocialLinks, setShowSocialLinks] = useState(false);
 
   // Smooth scroll handler
   const handleNavClick = (e) => {
@@ -66,7 +67,6 @@ function Header() {
       threshold: 0
     };
 
-    // ?
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -164,7 +164,7 @@ function Header() {
             onClick={() => setIsMenuOpen(false)} // Close on overlay click
           ></label>
           
-          <div className="menu bg-base-200 min-h-full w-80 p-4">
+          <div className="menu bg-base-200 min-h-full p-4">
             <a 
               href="#hero"
               onClick={handleNavClick}
@@ -197,30 +197,101 @@ function Header() {
               ))}
             </ul>
 
-            {/* Social Links */}
-            {/* <ul className="pt-6 border-t border-base-300">
-              <p className="text-sm text-base-content/60 mb-3 px-4">Connect with me</p>
+            {/* Social and Chatbot Buttons */}
+            <div className="mt-auto pt-3 border-t border-base-300 space-y-3">
+              {/* Toggle Social Links Button */}
+              <button
+                onClick={() => setShowSocialLinks((prev) => !prev)}
+                className="
+                  flex items-center justify-center
+                  mx-auto p-3 rounded-full
+                  bg-base-200 hover:bg-base-300
+                  transition-colors
+                  focus:outline-none focus:ring-2 focus:ring-primary"
+                aria-expanded={showSocialLinks}
+                aria-controls="social-links-section"
+                aria-label="Toggle social links"
+                title="Connect with me"
+              >
+                {/* Social Links Icon */}
+                <svg
+                  className={`w-6 h-6 transition-transform}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
+              </button>
 
-              <li className="flex gap-2">
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      flex-1 flex items-center justify-center 
-                      px-4 py-2 rounded-lg 
-                      bg-base-200 hover:bg-base-300 
-                      hover:text-primary transition-colors 
-                      focus:outline-none focus:ring-2 focus:ring-primary"
-                    aria-label={social.name}
-                  >
-                    <span className="font-bold">{social.icon}</span>
-                  </a>
-                ))}
-              </li>
-            </ul> */}
+             {/* Collapsible Social Links */}
+              {showSocialLinks && (
+                <div
+                  id="social-links-section"
+                  className="flex flex-col gap-2 animate-fade-in"
+                >
+                  {SOCIAL_LINKS.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        flex items-center justify-between
+                        px-4 py-2 rounded-lg
+                        bg-base-200 hover:bg-base-300
+                        hover:text-primary transition-colors
+                        focus:outline-none focus:ring-2 focus:ring-primary
+                        text-sm"
+                      aria-label={`Visit ${social.name} profile`}
+                    >
+                      <span>{social.name}</span>
+                      <span className="font-bold text-xs">{social.icon}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {/* Chatbot Button */}
+              <button
+                onClick={() => {
+                  // TODO: Implement chatbot functionality
+                  console.log('Chatbot clicked');
+                }}
+                className="
+                  flex items-center justify-center
+                  mx-auto p-3 rounded-full
+                  bg-primary hover:bg-primary/90
+                  text-primary-content
+                  transition-colors
+                  focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Open chatbot"
+                title="Chat with me"
+              >
+                {/* Chatbot Icon */}
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                  />
+                </svg>
+              </button>
+            </div>
+
           </div>
           
         </nav>
