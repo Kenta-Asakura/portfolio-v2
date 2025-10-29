@@ -9,9 +9,9 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { name: 'GitHub', href: 'https://github.com/yourusername', icon: 'G' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: 'in' },
-  { name: 'Twitter', href: 'https://twitter.com/yourusername', icon: 'X' }
+  { name: 'GitHub', href: 'https://github.com/Kenta-Asakura', icon: 'G' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kenta-asakura/', icon: 'in' },
+  { name: 'Wantedly', href: 'https://wantedly.com/', icon: 'X' }
 ];
 
 function Header() {
