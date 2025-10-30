@@ -1,4 +1,3 @@
-// Data lives in the component file
 const experienceData = [
   {
     id: 1,
