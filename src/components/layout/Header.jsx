@@ -168,20 +168,20 @@ function Header() {
             <a 
               href="#hero"
               onClick={handleNavClick}
-              className="mb-8 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
+              className="hidden lg:block mb-8 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
             >
               <h1 className="text-2xl font-bold text-primary">K</h1>
             </a>
 
             {/* Sidebar content */}
-            <ul>
+            <ul className="mb-auto">
               {NAV_LINKS.map((link) => (
                 <li key={link.name}>
                   <a 
                     href={link.href}
                     onClick={handleNavClick}
                     className={`
-                      flex items-center gap-3 rounded-lg 
+                      flex items-center gap-3 rounded-lg
                       text-sm font-medium transition-all 
                       hover:bg-base-200 hover:text-primary hover:translate-x-1 
                       focus:outline-none focus:ring-2 focus:ring-primary 
@@ -197,8 +197,35 @@ function Header() {
               ))}
             </ul>
 
+            {/* Collapsible Social Links */}
+            {showSocialLinks && (
+              <div
+                id="social-links-section"
+                className="flex flex-col items-center gap-2 animate-fade-in"
+              >
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      flex items-center justify-between
+                      px-4 py-2 rounded-lg
+                      bg-base-200 hover:bg-base-300
+                      hover:text-primary transition-colors
+                      focus:outline-none focus:ring-2 focus:ring-primary
+                      text-sm"
+                    aria-label={`Visit ${social.name} profile`}
+                  >
+                    <span className="font-bold text-xs">{social.icon}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+
             {/* Social and Chatbot Buttons */}
-            <div className="mt-auto pt-3 border-t border-base-300 space-y-3">
+            <div className="pt-3 space-y-3">
               {/* Toggle Social Links Button */}
               <button
                 onClick={() => setShowSocialLinks((prev) => !prev)}
@@ -229,34 +256,6 @@ function Header() {
                   />
                 </svg>
               </button>
-
-             {/* Collapsible Social Links */}
-              {showSocialLinks && (
-                <div
-                  id="social-links-section"
-                  className="flex flex-col gap-2 animate-fade-in"
-                >
-                  {SOCIAL_LINKS.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        flex items-center justify-between
-                        px-4 py-2 rounded-lg
-                        bg-base-200 hover:bg-base-300
-                        hover:text-primary transition-colors
-                        focus:outline-none focus:ring-2 focus:ring-primary
-                        text-sm"
-                      aria-label={`Visit ${social.name} profile`}
-                    >
-                      <span>{social.name}</span>
-                      <span className="font-bold text-xs">{social.icon}</span>
-                    </a>
-                  ))}
-                </div>
-              )}
 
               {/* Chatbot Button */}
               <button
