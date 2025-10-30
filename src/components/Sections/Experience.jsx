@@ -1,60 +1,143 @@
+import { useState } from 'react';
+
 const experienceData = [
   {
-    id: 1,
-    title: 'Frontend Developer',
-    company: 'Tech Company Inc.',
-    period: '2024 - Present',
-    description: 'Developing user-facing features using React and modern JavaScript. Collaborated with design team to implement responsive, accessible interfaces.',
+    id: 'hcl-tech-japan',
+    company: 'HCL Tech Japan',
+    title: 'Software Engineer',
+    period: 'April 2025 - Present',
+    responsibilities: [
+      'Built and shipped web applications for a range of clients across different industries',
+      'Interfaced with designers and back-end developers to create responsive, user-friendly interfaces',
+      'Contributed to team code reviews and helped establish frontend development standards'
+    ]
   },
   {
-    id: 2,
-    title: 'Junior Developer',
-    company: 'Startup XYZ',
-    period: '2023 - 2024',
-    description: 'Built and maintained web applications. Learned industry best practices and agile development methodologies.',
+    id: 'cendyn',
+    company: 'Cendyn',
+    title: 'Web Developer',
+    period: 'Jan 2024 - December 2024',
+    responsibilities: [
+      'Developed new features and maintained existing codebase for the company website',
+      'Worked with design team to implement pixel-perfect UI components',
+      'Participated in agile development process and daily standups'
+    ]
   },
   {
-    id: 3,
-    title: 'Freelance Developer',
-    company: 'Self-Employed',
-    period: '2022 - 2023',
-    description: 'Created custom websites for small businesses and startups. Gained experience with client communication and project management.',
-  },
+    id: 'Dicoo',
+    company: 'Dicoo',
+    title: 'Junior Frontend Developer',
+    period: 'August 2023 - Dec 2023',
+    responsibilities: [
+      'Assisted in the development of advertising campaign microsites',
+      'Learned industry best practices for frontend development',
+      'Collaborated with senior developers on client projects'
+    ]
+  }
 ];
 
 function Experience() {
+  // State management for active tab
+  const [activeTab, setActiveTab] = useState(experienceData[0].id);
+  
+  // Get current job details
+  const currentJob = experienceData.find(job => job.id === activeTab);
+
   return (
-    <section id="experience" className="py-20 bg-base-100">
+    <section id="experience" className="py-20 bg-neutral">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Experience</h2>
-        
-        {/* Timeline */}
-        <ul className="timeline timeline-vertical timeline-snap-icon max-md:timeline-compact max-w-4xl mx-auto">
-          {experienceData.map((job, index) => (
-            <li key={job.id}>
-              {index !== 0 && <hr />}
-              <div className="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  className="h-5 w-5 text-primary">
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className={`${index % 2 === 0 ? 'timeline-start' : 'timeline-end'} mb-10`}>
-                <time className="font-mono italic">{job.period}</time>
-                <div className="text-lg font-black">{job.title}</div>
-                <div className="text-base-content/70">{job.company}</div>
-                <p className="mt-2">{job.description}</p>
-              </div>
-              {index !== experienceData.length - 1 && <hr />}
-            </li>
-          ))}
-        </ul>
+        {/* Section Header with Numbering */}
+        <div className="max-w-4xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-content">
+            <span className="text-primary font-mono text-xl mr-2">02.</span>
+            Where I've Worked
+          </h2>
+          <div className="h-px bg-base-300 mt-4 ml-24"></div>
+        </div>
+
+        {/* Tabbed Experience Layout */}
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row gap-8">
+            {/* Tab List - Company Names */}
+            <div 
+              role="tablist" 
+              className="flex md:flex-col overflow-x-auto md:overflow-visible border-b-2 md:border-b-0 md:border-l-2 border-base-300"
+              aria-label="Company tabs"
+            >
+              {experienceData.map((job) => (
+                <button
+                  key={job.id}
+                  role="tab"
+                  aria-selected={activeTab === job.id}
+                  aria-controls={`panel-${job.id}`}
+                  id={`tab-${job.id}`}
+                  onClick={() => setActiveTab(job.id)}
+                  className={`
+                    px-5 py-3 text-left font-mono text-sm whitespace-nowrap
+                    transition-all duration-200 border-l-2 md:border-l-2 border-b-2 md:border-b-0
+                    focus:outline-none focus:bg-primary/10
+                    ${activeTab === job.id 
+                      ? 'text-primary border-primary bg-primary/5' 
+                      : 'text-neutral-content/60 border-transparent hover:text-primary hover:bg-primary/5'
+                    }
+                  `}
+                >
+                  {job.company}
+                </button>
+              ))}
+            </div>
+
+            {/* Tab Panel - Job Details */}
+            <div 
+              role="tabpanel"
+              id={`panel-${activeTab}`}
+              aria-labelledby={`tab-${activeTab}`}
+              className="flex-1 min-h-[400px]"
+            >
+              {currentJob && (
+                <div className="space-y-4">
+                  {/* Job Title & Company */}
+                  <h3 className="text-2xl font-bold text-neutral-content">
+                    {currentJob.title}{' '}
+                    <span className="text-primary">@ {currentJob.company}</span>
+                  </h3>
+
+                  {/* Date Range */}
+                  <p className="text-sm font-mono text-neutral-content/60">
+                    {currentJob.period}
+                  </p>
+
+                  {/* Responsibilities List */}
+                  <ul className="space-y-4 mt-6">
+                    {currentJob.responsibilities.map((item, index) => (
+                      <li 
+                        key={index}
+                        className="flex gap-3 text-neutral-content/80 leading-relaxed"
+                      >
+                        {/* Chevron Icon */}
+                        <svg 
+                          className="w-4 h-4 text-primary flex-shrink-0 mt-1.5"
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            strokeWidth={2} 
+                            d="M9 5l7 7-7 7" 
+                          />
+                        </svg>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

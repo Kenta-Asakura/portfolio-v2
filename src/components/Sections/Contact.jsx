@@ -1,5 +1,5 @@
 function Contact() {
-  const email = "your.email@example.com";
+  const email = "asakura.kenta963420@gmail.com";
   const subject = "Hello from your Portfolio";
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
