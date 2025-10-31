@@ -47,8 +47,10 @@ function Footer() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
         {/* Mobile: Stack vertically, Desktop: Flex row */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-4">
+        {/* <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-4"> */}
+        <div className="flex flex-col justify-center md:flex-row md:items-center gap-6 md:gap-4">
           
+
           {/* Social Links - Mobile: centered, Desktop: left */}
           {/* <div className="flex justify-center md:justify-start">
             <ul className="flex gap-4" aria-label="Social media links">
@@ -69,9 +71,9 @@ function Footer() {
             </ul>
           </div> */}
 
-          {/* Copyright - Mobile: centered, Desktop: right */}
+          {/* Copyright */}
           <div className="text-center">
-            <p className="text-xs text-base-content/60 mt-1">
+            <p className="mx-auto text-xs text-base-content/60 mt-1">
               Built with ❤️ by Kenta Asakura © {currentYear}
             </p>
           </div>
