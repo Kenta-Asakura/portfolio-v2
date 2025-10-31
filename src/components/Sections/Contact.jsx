@@ -1,3 +1,5 @@
+import SectionHeader from '../ui/SectionHeader';1
+
 function Contact() {
   const email = "asakura.kenta963420@gmail.com";
   const subject = "Hello from your Portfolio";
@@ -6,9 +8,12 @@ function Contact() {
   return (
     <section id="contact" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
+        <SectionHeader 
+          headerNumber="04."
+          headerTitle="Get In Touch"
+        />
+
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Get In Touch</h2>
-          
           <p className="text-lg text-base-content/80 mb-8">
             Have a project in mind or want to collaborate? I'd love to hear from you. 
             Feel free to reach out and let's create something amazing together.

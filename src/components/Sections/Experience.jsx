@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SectionHeader from '../ui/SectionHeader';
 
 const experienceData = [
   {
@@ -47,13 +48,17 @@ function Experience() {
     <section id="experience" className="py-20 bg-neutral">
       <div className="container mx-auto px-4">
         {/* Section Header with Numbering */}
-        <div className="max-w-4xl mx-auto mb-12">
+        {/* <div className="max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-neutral-content">
             <span className="text-primary font-mono text-xl mr-2">02.</span>
             Where I've Worked
           </h2>
           <div className="h-px bg-base-300 mt-4 ml-24"></div>
-        </div>
+        </div> */}
+        <SectionHeader 
+          headerNumber="02."
+          headerTitle="Where I've Worked" 
+        />
 
         {/* Tabbed Experience Layout */}
         <div className="max-w-4xl mx-auto">

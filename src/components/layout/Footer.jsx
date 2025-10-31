@@ -50,7 +50,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-4">
           
           {/* Social Links - Mobile: centered, Desktop: left */}
-          <div className="flex justify-center md:justify-start">
+          {/* <div className="flex justify-center md:justify-start">
             <ul className="flex gap-4" aria-label="Social media links">
               {socialLinks.map((link) => (
                 <li key={link.name}>
@@ -67,15 +67,12 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Copyright - Mobile: centered, Desktop: right */}
-          <div className="text-center md:text-right">
-            <p className="text-sm text-base-content/70">
-              © {currentYear} Your Name. All rights reserved.
-            </p>
+          <div className="text-center">
             <p className="text-xs text-base-content/60 mt-1">
-              Built with React, Tailwind CSS, and DaisyUI
+              Built with ❤️ by Kenta Asakura © {currentYear}
             </p>
           </div>
         </div>

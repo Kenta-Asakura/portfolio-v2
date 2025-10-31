@@ -1,9 +1,14 @@
+import SectionHeader from "../ui/SectionHeader";
+
 function About() {
   return (
     <section id="about" className="py-20 bg-base-100">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12">About Me</h2>
+           <SectionHeader 
+            headerNumber="01."
+            headerTitle="About Me" 
+          />
           
           <div className="flex flex-col lg:flex-row gap-8 items-center">
             <div className="flex-1 prose lg:prose-lg">

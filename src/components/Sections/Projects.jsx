@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import SectionHeader from '../ui/SectionHeader';
 
 const projectsData = [
   {
@@ -43,8 +44,11 @@ function Projects() {
   return (
     <section id="projects" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
-        
+         <SectionHeader 
+          headerNumber="03."
+          headerTitle="My Projects" 
+        />
+
         {/* Filter Tabs */}
         <div role="tablist" className="tabs tabs-boxed max-w-sm mx-auto mb-12">
           <button 
