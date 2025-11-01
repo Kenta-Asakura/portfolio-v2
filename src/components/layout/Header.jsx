@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 
 const NAV_LINKS = [
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ];
 
@@ -290,9 +289,7 @@ function Header() {
                 </svg>
               </button>
             </div>
-
           </div>
-          
         </nav>
       </aside>
     </>
