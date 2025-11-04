@@ -145,7 +145,7 @@ function Header() {
 
       {/* Desktop Sidebar - Hidden on mobile/tablet */}
       <aside 
-        className="drawer w-auto lg:drawer-open"
+        className="drawer drawer-end w-auto lg:drawer-open"
         role="navigation"
         aria-label="Main navigation"
       >
