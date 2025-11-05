@@ -88,7 +88,7 @@ function Header() {
     <>
        {/* Mobile Top Bar - Only visible on mobile/tablet */}
       <header 
-        className="lg:hidden navbar bg-base-100/95 backdrop-blur-sm shadow-md"
+        className="lg:hidden navbar fixed z-20 bg-base-200 backdrop-blur-sm shadow-md"
         role="banner"
       >
         <nav className="container mx-auto px-4">
@@ -143,7 +143,7 @@ function Header() {
         </nav>
       </header>
 
-      {/* Desktop Sidebar - Hidden on mobile/tablet */}
+      {/* Sidebar - Hidden on mobile/tablet */}
       <aside 
         className="drawer drawer-end w-auto lg:drawer-open"
         role="navigation"
@@ -163,7 +163,7 @@ function Header() {
             onClick={() => setIsMenuOpen(false)} // Close on overlay click
           ></label>
           
-          <div className="menu bg-base-200 min-h-full p-4">
+          <div className="menu bg-base-200 justify-center gap-7 lg:gap-4 min-h-full px-4 py-8">
             <a 
               href="#hero"
               onClick={handleNavClick}
@@ -173,7 +173,7 @@ function Header() {
             </a>
 
             {/* Sidebar content */}
-            <ul className="mb-auto">
+            <ul className="lg:mb-auto">
               {NAV_LINKS.map((link) => (
                 <li key={link.name}>
                   <a 
