@@ -224,24 +224,29 @@ function Header() {
             )}
 
             {/* Social and Chatbot Buttons */}
-            <div className="pt-3 space-y-3">
-              {/* Toggle Social Links Button */}
-              <button
-                onClick={() => setShowSocialLinks((prev) => !prev)}
-                className="
-                  flex items-center justify-center
-                  mx-auto p-3 rounded-full
-                  bg-base-200 hover:bg-base-300
-                  transition-colors
-                  focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-expanded={showSocialLinks}
+            <div className="space-y-3 flex flex-col items-center">
+              {/* Social Links Button */}
+              <label 
+                htmlFor="social-links-toggle"
+                className="btn btn-circle swap swap-rotate"
+                aria-expanded={showSocialLinks} 
                 aria-controls="social-links-section"
-                aria-label="Toggle social links"
+                aria-label="Toggle social links" 
                 title="Connect with me"
+                onClick={() => setShowSocialLinks((prev) => !prev)}
               >
+                {/* this hidden checkbox controls the state */}
+                <input 
+                  type="checkbox" 
+                  checked={showSocialLinks}
+                  onChange={(e) => setShowSocialLinks(e.target.checked)}
+                  aria-hidden="true"
+                  tabIndex={-1}
+                />
+
                 {/* Social Links Icon */}
                 <svg
-                  className={`w-6 h-6 transition-transform}`}
+                  className="swap-off w-6 h-6 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -254,7 +259,18 @@ function Header() {
                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                   />
                 </svg>
-              </button>
+
+                {/* close icon */}
+                <svg
+                  className="swap-on fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 512 512">
+                  <polygon
+                    points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                </svg>
+              </label>
 
               {/* Chatbot Button */}
               <button
