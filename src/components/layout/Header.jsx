@@ -210,14 +210,14 @@ function Header() {
                     rel="noopener noreferrer"
                     className="
                       flex items-center justify-between
-                      px-4 py-2 rounded-lg
-                      bg-base-200 hover:bg-base-300
+                      px-4 py-2 rounded-full
+                      bg-gray-500 hover:bg-base-300
                       hover:text-primary transition-colors
                       focus:outline-none focus:ring-2 focus:ring-primary
                       text-sm"
                     aria-label={`Visit ${social.name} profile`}
                   >
-                    <span className="font-bold text-xs">{social.icon}</span>
+                    <span className="font-bold text-xl">{social.icon}</span>
                   </a>
                 ))}
               </div>
@@ -236,7 +236,7 @@ function Header() {
                 onClick={() => setShowSocialLinks((prev) => !prev)}
               >
                 {/* this hidden checkbox controls the state */}
-                <input 
+                <input
                   type="checkbox" 
                   checked={showSocialLinks}
                   onChange={(e) => setShowSocialLinks(e.target.checked)}
@@ -246,7 +246,7 @@ function Header() {
 
                 {/* Social Links Icon */}
                 <svg
-                  className="swap-off w-6 h-6 transition-transform"
+                  className="swap-off w-6 h-6 transition-transform mx-auto"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
