@@ -197,38 +197,37 @@ function Header() {
             </ul>
 
             {/* Collapsible Social Links */}
-            {showSocialLinks && (
-              <div
-                id="social-links-section"
-                className="flex flex-col items-center gap-2 animate-fade-in"
-              >
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                      flex items-center justify-between
-                      px-4 py-2 rounded-full
-                      bg-gray-500 hover:bg-base-300
-                      hover:text-primary transition-colors
-                      focus:outline-none focus:ring-2 focus:ring-primary
-                      text-sm"
-                    aria-label={`Visit ${social.name} profile`}
-                  >
-                    <span className="font-bold text-xl">{social.icon}</span>
-                  </a>
-                ))}
-              </div>
-            )}
+            <div
+              id="social-links-section"
+              className={`lg:${showSocialLinks ? '' : 'hidden'}
+                flex flex-col items-center gap-2 animate-fade-in`}
+            >
+              {SOCIAL_LINKS.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    flex items-center justify-between
+                    px-4 py-2 rounded-full
+                    bg-gray-500 hover:bg-base-300
+                    hover:text-primary transition-colors
+                    focus:outline-none focus:ring-2 focus:ring-primary
+                    text-sm"
+                  aria-label={`Visit ${social.name} profile`}
+                >
+                  <span className="font-bold text-xl">{social.icon}</span>
+                </a>
+              ))}
+            </div>
 
             {/* Social and Chatbot Buttons */}
             <div className="space-y-3 flex flex-col items-center">
               {/* Social Links Button */}
               <label 
                 htmlFor="social-links-toggle"
-                className="btn btn-circle swap swap-rotate"
+                className="btn btn-circle swap swap-rotate max-lg:hidden"
                 aria-expanded={showSocialLinks} 
                 aria-controls="social-links-section"
                 aria-label="Toggle social links" 
@@ -271,6 +270,33 @@ function Header() {
                     points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
               </label>
+
+              {/* TEST */}
+              {/* {showSocialLinks && (
+                <div
+                  id="social-links-section"
+                  className="flex flex-col items-center gap-2 animate-fade-in"
+                >
+                  {SOCIAL_LINKS.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                        flex items-center justify-between
+                        px-4 py-2 rounded-full
+                        bg-gray-500 hover:bg-base-300
+                        hover:text-primary transition-colors
+                        focus:outline-none focus:ring-2 focus:ring-primary
+                        text-sm"
+                      aria-label={`Visit ${social.name} profile`}
+                    >
+                      <span className="font-bold text-xl">{social.icon}</span>
+                    </a>
+                  ))}
+                </div>
+              )} */}
 
               {/* Chatbot Button */}
               <button
