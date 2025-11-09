@@ -99,13 +99,13 @@ function Header() {
               className="btn btn-ghost text-xl"
               onClick={handleNavClick}
             >
-              K
+              <span className="text-2xl font-bold text-primary">K</span>
             </a>
 
             {/* Mobile Menu Button */}
             <label 
               htmlFor="my-drawer-3"
-              className="btn btn-circle swap swap-rotate drawer-button"
+              className="btn btn-circle swap swap-rotate drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -172,7 +172,7 @@ function Header() {
               <h1 className="text-2xl font-bold text-primary">K</h1>
             </a>
 
-            {/* Sidebar content */}
+            {/* Sidebar Nav Links */}
             <ul className="lg:mb-auto">
               {NAV_LINKS.map((link) => (
                 <li key={link.name}>
@@ -180,7 +180,7 @@ function Header() {
                     href={link.href}
                     onClick={handleNavClick}
                     className={`
-                      flex items-center gap-3 rounded-lg
+                      flex items-center rounded-lg
                       text-sm font-medium transition-all 
                       hover:bg-base-200 hover:text-primary hover:translate-x-1 
                       focus:outline-none focus:ring-2 focus:ring-primary 
@@ -200,7 +200,7 @@ function Header() {
             <div
               id="social-links-section"
               className={`lg:${showSocialLinks ? '' : 'hidden'}
-                flex flex-col items-center gap-2 animate-fade-in`}
+                flex lg:flex-col items-center gap-2 animate-fade-in`}
             >
               {SOCIAL_LINKS.map((social) => (
                 <a
@@ -209,8 +209,8 @@ function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    flex items-center justify-between
-                    px-4 py-2 rounded-full
+                    flex items-center justify-center
+                    w-10 h-10 rounded-full
                     bg-gray-500 hover:bg-base-300
                     hover:text-primary transition-colors
                     focus:outline-none focus:ring-2 focus:ring-primary
@@ -270,33 +270,6 @@ function Header() {
                     points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
               </label>
-
-              {/* TEST */}
-              {/* {showSocialLinks && (
-                <div
-                  id="social-links-section"
-                  className="flex flex-col items-center gap-2 animate-fade-in"
-                >
-                  {SOCIAL_LINKS.map((social) => (
-                    <a
-                      key={social.name}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="
-                        flex items-center justify-between
-                        px-4 py-2 rounded-full
-                        bg-gray-500 hover:bg-base-300
-                        hover:text-primary transition-colors
-                        focus:outline-none focus:ring-2 focus:ring-primary
-                        text-sm"
-                      aria-label={`Visit ${social.name} profile`}
-                    >
-                      <span className="font-bold text-xl">{social.icon}</span>
-                    </a>
-                  ))}
-                </div>
-              )} */}
 
               {/* Chatbot Button */}
               <button
