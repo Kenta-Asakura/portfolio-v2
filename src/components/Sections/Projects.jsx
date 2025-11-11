@@ -196,6 +196,26 @@ function Projects() {
                 </p>
               </div>
             )}
+
+            {/* Action Buttons */}
+            <div className="modal-action">
+              <a 
+                href={selectedProject.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                View Live Demo
+              </a>
+              <a 
+                href={selectedProject.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                View Source Code
+              </a>
+            </div>
           </div>
         </dialog>
       )}
