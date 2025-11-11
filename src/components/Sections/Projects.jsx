@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 const projectsData = [
@@ -59,11 +60,15 @@ const projectsData = [
 ];
 
 function Projects() {
-  // const [filter, setFilter] = useState('all');
-  
-  // const filteredProjects = filter === 'all' 
-  //   ? projectsData 
-  //   : projectsData.filter(project => project.featured);
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <section id="projects" className="py-20 bg-base-200">
@@ -73,28 +78,8 @@ function Projects() {
           headerTitle="My Projects" 
         />
 
-        {/* Filter Tabs */}
-        {/* <div role="tablist" className="tabs tabs-boxed max-w-sm mx-auto mb-12">
-          <button 
-            role="tab" 
-            className={`tab ${filter === 'all' ? 'tab-active' : ''}`}
-            onClick={() => setFilter('all')}
-          >
-            All Projects
-          </button>
-          
-          <button 
-            role="tab" 
-            className={`tab ${filter === 'featured' ? 'tab-active' : ''}`}
-            onClick={() => setFilter('featured')}
-          >
-            Featured
-          </button>
-        </div> */}
-
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {/* {filteredProjects.map((project) => ( */}
           {projectsData.map((project) => (
             <div 
               key={project.id}
