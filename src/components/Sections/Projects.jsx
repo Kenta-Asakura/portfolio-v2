@@ -126,6 +126,15 @@ function Projects() {
           role="dialog"
         >
           <div className="modal-box max-w-4xl max-h-[90vh] overflow-y-auto">
+            {/* Close Button */}
+            <button
+              onClick={closeModal}
+              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+
             {/* Project Image */}
             <figure className="mb-6">
               <img 
