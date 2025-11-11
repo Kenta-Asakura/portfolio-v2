@@ -36,7 +36,7 @@ const projectsData = [
     ],
     challenges: 'Ensuring data consistency across multiple users while maintaining real-time updates required implementing optimistic UI updates and conflict resolution strategies.',
     github: 'https://github.com/yourusername/project2',
-    demo: '',
+    demo: 'test.com',
   },
    {
     id: 3,
@@ -64,6 +64,8 @@ function Projects() {
 
   const openModal = (project) => {
     setSelectedProject(project);
+    // !TEST - Log the clicked project title
+    // console.log('Clicked:', project.title)
   };
 
   const closeModal = () => {
@@ -83,7 +85,11 @@ function Projects() {
           {projectsData.map((project) => (
             <div 
               key={project.id}
-              className="card bg-base-100 border border-base-300"
+              className="card bg-base-100 border border-base-300 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+              onClick={() => openModal(project)}
+              role="button"
+              tabIndex={0}
+              aria-label={`View details for ${project.title}`}
             >
               <figure>
                 <img 
@@ -102,22 +108,9 @@ function Projects() {
                 </p>
                 
                 <div className="card-actions justify-end mt-4">
-                  <a 
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary btn-sm"
-                  >
-                    View Demo
-                  </a>
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary btn-sm"
-                  >
-                    GitHub
-                  </a>
+                  <span className="text-sm text-primary font-medium">
+                    Click to learn more →
+                  </span>
                 </div>
               </div>
             </div>

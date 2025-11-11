@@ -36,7 +36,7 @@ function About() {
             {/* Avatar */}
             <div className="avatar">
               <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="" alt="Your Name" />
+                <img src="test.jpg" alt="Your Name" />
               </div>
             </div>
           </div>
