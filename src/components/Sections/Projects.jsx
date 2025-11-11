@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import SectionHeader from '../ui/SectionHeader';
 
 const projectsData = [
@@ -6,32 +5,57 @@ const projectsData = [
     id: 1,
     title: 'Photosnap Website',
     description: 'A React-based multi-page marketing website for a fictional photo-sharing app. Building this project enhanced my understanding of React props for dynamic rendering and improved my skills in managing reusable and scalable component structures.',
+    longDescription: 'Built a full-featured React-based multi-page marketing website for a fictional photo-sharing app. This project enhanced my understanding of React props for dynamic rendering and improved my skills in managing reusable and scalable component structures. The website features multiple pages with consistent navigation and responsive design.',
     image: '/images/projects/photosnap.png',
     tags: ['React', 'Sass', 'Figma'],
+    features: [
+      'Multi-page React architecture with routing',
+      'Reusable component library',
+      'Dynamic content rendering with props',
+      'Fully responsive design from mobile to desktop',
+      'Pixel-perfect implementation from Figma designs'
+    ],
+    challenges: 'Managing reusable component structures and implementing dynamic rendering with React props while maintaining scalability and clean code organization.',
     github: 'https://github.com/Kenta-Asakura/photosnap-react-website',
     demo: 'https://photosnap-react-website.netlify.app/',
-    // featured: true,
   },
   {
     id: 2,
+    title: 'Name Base',
+    description: 'Collaborative task management with real-time updates',
+    longDescription: 'Developed a collaborative task management application that enables teams to work together in real-time. Features include drag-and-drop task organization, team member assignments, and instant synchronization across all connected clients.',
+    image: '/images/project2.jpg',
+    tags: ['React', 'DaisyUI', 'Hono', "Docker"],
+    features: [
+      // 'Real-time collaboration with Firebase',
+      // 'Drag-and-drop task organization',
+      'Team member assignments',
+      'Project boards and lists',
+      'Activity tracking and notifications'
+    ],
+    challenges: 'Ensuring data consistency across multiple users while maintaining real-time updates required implementing optimistic UI updates and conflict resolution strategies.',
+    github: 'https://github.com/yourusername/project2',
+    demo: '',
+  },
+   {
+    id: 3,
     title: 'WeatherVibez',
     description: 'A scalable and modular application featuring clean, maintainable code and real-time weather data integration through an external API for a seamless user experience.',
+    longDescription: 'Developed a scalable and modular weather application featuring clean, maintainable code architecture. The application integrates real-time weather data through an external API to provide users with accurate and up-to-date weather information. Built with TypeScript for type safety and better developer experience.',
     image: '/images/projects/weather-vibez.png',
     tags: ['TypeScript', 'Sass', 'Webpack'],
+    features: [
+      'Real-time weather data from external API',
+      'TypeScript for type safety and better DX',
+      'Modular architecture with Webpack',
+      'Clean and maintainable codebase',
+      'Responsive UI with custom Sass styling'
+    ],
+    challenges: 'Implementing clean architecture with TypeScript while managing external API integration and ensuring real-time data synchronization for a seamless user experience.',
     github: 'https://github.com/Kenta-Asakura/weather-dashboard',
     demo: 'https://weather-vibez.netlify.app/',
-    // featured: true,
   },
-  {
-    id: 3,
-    title: 'CoolBeans',
-    description: 'A mock e-commerce coffee shop landing page developed using Bootstrap and Sass, designed for quick development and responsive functionality.',
-    image: '/images/projects/CoolBeans.png',
-    tags: ['JavaScript', 'Sass', 'Bootstrap'],
-    github: 'https://github.com/Kenta-Asakura/bootstrap-project',
-    demo: 'https://coolbeanss.netlify.app/',
-    // featured: false,
-  },
+
 ];
 
 function Projects() {
