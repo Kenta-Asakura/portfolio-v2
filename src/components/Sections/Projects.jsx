@@ -117,6 +117,79 @@ function Projects() {
           ))}
         </div>
       </div>
+
+      {/* Project Modal */}
+      {selectedProject && (
+        <dialog 
+          className="modal modal-open"
+          aria-labelledby="modal-title"
+          role="dialog"
+        >
+          <div className="modal-box max-w-4xl max-h-[90vh] overflow-y-auto">
+            {/* Project Image */}
+            <figure className="mb-6">
+              <img 
+                src={selectedProject.image} 
+                alt={selectedProject.title}
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </figure>
+
+            {/* Project Title */}
+            <h3 id="modal-title" className="font-bold text-3xl mb-4">
+              {selectedProject.title}
+            </h3>
+
+            {/* Tech Stack Badges */}
+            <div className="flex flex-wrap gap-2 mb-6">
+              {selectedProject.tags.map((tag) => (
+                <span 
+                  key={tag}
+                  className="badge badge-primary badge-lg"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {/* Long Description */}
+            <div className="prose prose-sm max-w-none mb-6">
+              <h4 className="text-xl font-semibold mb-2">About</h4>
+              <p className="text-base-content/80">
+                {selectedProject.longDescription}
+              </p>
+            </div>
+
+            {/* Key Features */}
+            {selectedProject.features && (
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold mb-3">Key Features</h4>
+                <ul className="space-y-2">
+                  {selectedProject.features.map((feature, index) => (
+                    <li 
+                      key={index}
+                      className="flex items-start gap-2"
+                    >
+                      <span className="text-primary mt-1">✓</span>
+                      <span className="text-base-content/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {/* Challenges */}
+            {selectedProject.challenges && (
+              <div className="mb-6">
+                <h4 className="text-xl font-semibold mb-2">Technical Challenges</h4>
+                <p className="text-base-content/80">
+                  {selectedProject.challenges}
+                </p>
+              </div>
+            )}
+          </div>
+        </dialog>
+      )}
     </section>
   );
 }
