@@ -217,6 +217,11 @@ function Projects() {
               </a>
             </div>
           </div>
+
+          {/* Modal Backdrop */}
+          <form method="dialog" className="modal-backdrop">
+            <button onClick={closeModal}>close</button>
+          </form>
         </dialog>
       )}
     </section>
