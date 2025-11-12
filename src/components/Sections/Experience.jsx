@@ -45,7 +45,7 @@ function Experience() {
   const currentJob = experienceData.find(job => job.id === activeTab);
 
   return (
-    <section id="experience" className="py-20 bg-neutral">
+    <section id="experience" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
         <SectionHeader 
           headerNumber="02."

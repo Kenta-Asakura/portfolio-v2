@@ -2,7 +2,7 @@ import SectionHeader from "../ui/SectionHeader";
 
 function About() {
   return (
-    <section id="about" className="py-20 bg-base-100">
+    <section id="about" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
            <SectionHeader 
