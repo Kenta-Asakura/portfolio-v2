@@ -54,11 +54,11 @@ function Experience() {
 
         {/* Tabbed Experience Layout */}
         <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-8">
+          <div className="flex flex-col items-start md:flex-row gap-8">
             {/* Tab List - Company Names */}
             <div 
               role="tablist" 
-              className="flex md:flex-col overflow-x-auto md:overflow-visible border-b-2 md:border-b-0 md:border-l-2 border-base-300"
+              className="flex md:flex-col overflow-x-auto md:overflow-visible border-b-4 md:border-b-0 md:border-l-4 border-base-300"
               aria-label="Company tabs"
             >
               {experienceData.map((job) => (
