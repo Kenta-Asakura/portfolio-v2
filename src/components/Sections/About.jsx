@@ -1,4 +1,6 @@
 import SectionHeader from "../ui/SectionHeader";
+import AvatarImgDesktop from "../../assets/images/profile-header-desktop.jpg";
+import AvatarImgMobile from "../../assets/images/profile-header-mobile.jpg";
 
 function About() {
   return (
@@ -10,7 +12,7 @@ function About() {
             headerTitle="About Me" 
           />
           
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
+          <div className="flex flex-col lg:flex-row gap-20 items-center">
             <div className="flex-1 prose lg:prose-lg">
               {/* Bio */}
               <p>
@@ -35,8 +37,20 @@ function About() {
 
             {/* Avatar */}
             <div className="avatar">
-              <div className="w-48 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="test.jpg" alt="Your Name" />
+              <div className="w-72 ring-primary overflow-hidden">
+                {/* Desktop */}          
+                <img
+                  src={AvatarImgDesktop}
+                  alt="Your Name"
+                  className="hidden lg:block w-full h-auto object-cover"
+                />
+
+                {/* Mobile */}
+                <img
+                  src={AvatarImgMobile}
+                  alt="Your Name"
+                  className="block lg:hidden w-full h-auto object-cover"
+                />
               </div>
             </div>
           </div>
