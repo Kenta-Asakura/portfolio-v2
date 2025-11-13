@@ -86,7 +86,8 @@ function Experience() {
                   aria-selected={activeTab === job.id}
                   aria-controls={`panel-${job.id}`}
                   id={`tab-${job.id}`}
-                  onClick={() => setActiveTab(job.id)}
+                  onClick={() => handleTabChange(job.id)}
+                  disabled={isAnimating}
                   className={`
                     px-5 py-3 text-left font-mono text-sm whitespace-nowrap
                     transition-all duration-200 
