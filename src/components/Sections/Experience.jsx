@@ -38,11 +38,29 @@ const experienceData = [
 ];
 
 function Experience() {
-  // State management for active tab
+  // State management for active tab and animations
   const [activeTab, setActiveTab] = useState(experienceData[0].id);
+  const [isAnimating, setIsAnimating] = useState(false);
   
   // Get current job details
   const currentJob = experienceData.find(job => job.id === activeTab);
+
+  // Handle tab change with animation
+  const handleTabChange = (jobId) => {
+    if (jobId === activeTab || isAnimating) return;
+    
+    // Start exit animation
+    setIsAnimating(true);
+    
+    // Wait for exit animation, then change tab
+    setTimeout(() => {
+      setActiveTab(jobId);
+      // Brief pause before entrance animation
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 50);
+    }, 200);
+  };
 
   return (
     <section id="experience" className="py-20 bg-base-200">
