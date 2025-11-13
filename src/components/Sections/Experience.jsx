@@ -112,7 +112,17 @@ function Experience() {
               className="flex-1 min-h-[400px]"
             >
               {currentJob && (
-                <div className="space-y-4">
+                <div 
+                  className={`
+                    space-y-4
+                    transition-all duration-300 ease-in-out
+                    ${isAnimating 
+                      ? 'opacity-0 translate-x-4' 
+                      : 'opacity-100 translate-x-0'
+                    }
+                  `}
+                >
+
                   {/* Job Title & Company */}
                   <h3 className="text-2xl font-bold text-neutral-content">
                     {currentJob.title}{' '}
