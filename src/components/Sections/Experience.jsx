@@ -139,7 +139,17 @@ function Experience() {
                     {currentJob.responsibilities.map((item, index) => (
                       <li 
                         key={index}
-                        className="flex gap-3 text-neutral-content/80 leading-relaxed"
+                        className={`
+                          flex gap-3 text-neutral-content/80 leading-relaxed
+                          transition-all duration-300 ease-in-out
+                          ${isAnimating 
+                            ? 'opacity-0 translate-x-4' 
+                            : 'opacity-100 translate-x-0'
+                          }
+                        `}
+                        style={{
+                          transitionDelay: isAnimating ? '0ms' : `${index * 75}ms`
+                        }}
                       >
                         {/* Chevron Icon */}
                         <svg 
@@ -160,6 +170,7 @@ function Experience() {
                       </li>
                     ))}
                   </ul>
+                  
                 </div>
               )}
             </div>
