@@ -1,63 +1,6 @@
 import { useState } from 'react';
+import { projectsData } from '../../data/projects';
 import SectionHeader from '../ui/SectionHeader';
-
-const projectsData = [
-  {
-    id: 1,
-    title: 'Photosnap Website',
-    description: 'A React-based multi-page marketing website for a fictional photo-sharing app. Building this project enhanced my understanding of React props for dynamic rendering and improved my skills in managing reusable and scalable component structures.',
-    longDescription: 'Built a full-featured React-based multi-page marketing website for a fictional photo-sharing app. This project enhanced my understanding of React props for dynamic rendering and improved my skills in managing reusable and scalable component structures. The website features multiple pages with consistent navigation and responsive design.',
-    image: '/images/projects/photosnap.png',
-    tags: ['React', 'Sass', 'Figma'],
-    features: [
-      'Multi-page React architecture with routing',
-      'Reusable component library',
-      'Dynamic content rendering with props',
-      'Fully responsive design from mobile to desktop',
-      'Pixel-perfect implementation from Figma designs'
-    ],
-    challenges: 'Managing reusable component structures and implementing dynamic rendering with React props while maintaining scalability and clean code organization.',
-    github: 'https://github.com/Kenta-Asakura/photosnap-react-website',
-    demo: 'https://photosnap-react-website.netlify.app/',
-  },
-  {
-    id: 2,
-    title: 'Name Base',
-    description: 'Collaborative task management with real-time updates',
-    longDescription: 'Developed a collaborative task management application that enables teams to work together in real-time. Features include drag-and-drop task organization, team member assignments, and instant synchronization across all connected clients.',
-    image: '/images/project2.jpg',
-    tags: ['React', 'DaisyUI', 'Hono', "Docker"],
-    features: [
-      // 'Real-time collaboration with Firebase',
-      // 'Drag-and-drop task organization',
-      'Team member assignments',
-      'Project boards and lists',
-      'Activity tracking and notifications'
-    ],
-    challenges: 'Ensuring data consistency across multiple users while maintaining real-time updates required implementing optimistic UI updates and conflict resolution strategies.',
-    github: 'https://github.com/yourusername/project2',
-    demo: 'test.com',
-  },
-   {
-    id: 3,
-    title: 'WeatherVibez',
-    description: 'A scalable and modular application featuring clean, maintainable code and real-time weather data integration through an external API for a seamless user experience.',
-    longDescription: 'Developed a scalable and modular weather application featuring clean, maintainable code architecture. The application integrates real-time weather data through an external API to provide users with accurate and up-to-date weather information. Built with TypeScript for type safety and better developer experience.',
-    image: '/images/projects/weather-vibez.png',
-    tags: ['TypeScript', 'Sass', 'Webpack'],
-    features: [
-      'Real-time weather data from external API',
-      'TypeScript for type safety and better DX',
-      'Modular architecture with Webpack',
-      'Clean and maintainable codebase',
-      'Responsive UI with custom Sass styling'
-    ],
-    challenges: 'Implementing clean architecture with TypeScript while managing external API integration and ensuring real-time data synchronization for a seamless user experience.',
-    github: 'https://github.com/Kenta-Asakura/weather-dashboard',
-    demo: 'https://weather-vibez.netlify.app/',
-  },
-
-];
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -93,17 +36,18 @@ function Projects() {
             >
               <figure>
                 <img 
-                  src={project.image} 
+                  // src={project.image} 
                   alt={project.title} 
                   className="w-full object-cover" 
                 />
               </figure>
+
               <div className="card-body">
                 <h2 className="card-title">{project.title}</h2>
-                <p>{project.description}</p>
+                <p className="mb-auto">{project.description}</p>
                 
                 {/* Tech Stack as Text */}
-                <p className="text-sm text-base-content/60 mt-2">
+                <p className="text-sm text-base-content/60 grow-0">
                   {project.tags.join(' • ')}
                 </p>
                 
@@ -129,7 +73,7 @@ function Projects() {
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+              className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2"
               aria-label="Close modal"
             >
               ✕
@@ -137,12 +81,20 @@ function Projects() {
 
             {/* Project Image */}
             <figure className="mb-6">
-              <img 
-                src={selectedProject.image} 
-                alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-lg"
-              />
+              <picture>
+                <source
+                  media="(min-width: 1024px)"
+                  srcSet={selectedProject.images.desktop}
+                />
+
+                <img
+                  src={selectedProject.images.mobile || selectedProject.images.desktop}
+                  alt={selectedProject.images.alt}
+                  className="w-full h-64 object-cover rounded-lg"
+                />
+              </picture>
             </figure>
+            
 
             {/* Project Title */}
             <h3 id="modal-title" className="font-bold text-3xl mb-4">
@@ -154,7 +106,7 @@ function Projects() {
               {selectedProject.tags.map((tag) => (
                 <span 
                   key={tag}
-                  className="badge badge-primary badge-lg"
+                  className="badge badge-ghost badge-md"
                 >
                   {tag}
                 </span>
