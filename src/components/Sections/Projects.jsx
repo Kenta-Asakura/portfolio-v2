@@ -81,18 +81,24 @@ function Projects() {
 
             {/* Project Image */}
             <figure className="mb-6">
-              <picture>
-                <source
-                  media="(min-width: 1024px)"
-                  srcSet={selectedProject.images.desktop}
-                />
+              {selectedProject.images.desktop ? (
+                <picture>
+                  <source
+                    media="(min-width: 1024px)"
+                    srcSet={selectedProject.images.desktop}
+                  />
 
-                <img
-                  src={selectedProject.images.mobile || selectedProject.images.desktop}
-                  alt={selectedProject.images.alt}
-                  className="w-full h-64 object-cover rounded-lg"
-                />
-              </picture>
+                  <img
+                    src={selectedProject.images.mobile || selectedProject.images.desktop}
+                    alt={selectedProject.images.alt}
+                    className="w-full h-64 object-cover rounded-lg"
+                  />
+                </picture>
+              ) : (
+                <div className="w-full h-64 bg-base-300 rounded-lg flex items-center justify-center text-base-content/40">
+                  <span>Image Coming Soon</span>
+                </div>
+              )}
             </figure>
             
 
