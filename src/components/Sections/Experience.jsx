@@ -58,8 +58,8 @@ function Experience() {
       // Brief pause before entrance animation
       setTimeout(() => {
         setIsAnimating(false);
-      }, 50);
-    }, 200);
+      }, 30);
+    }, 150);
   };
 
   return (
