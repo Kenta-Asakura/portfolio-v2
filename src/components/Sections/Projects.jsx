@@ -15,6 +15,14 @@ function Projects() {
     setSelectedProject(null);
   };
 
+  // Handle keyboard navigation for cards
+  const handleCardKeyDown = (e, project) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openModal(project);
+    }
+  };
+
   return (
     <section id="projects" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
@@ -30,6 +38,7 @@ function Projects() {
               key={project.id}
               className="card bg-base-100 border border-base-300 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
               onClick={() => openModal(project)}
+              onKeyDown={(e) => handleCardKeyDown(e, project)}
               role="button"
               tabIndex={0}
               aria-label={`View details for ${project.title}`}
