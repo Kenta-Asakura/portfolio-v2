@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { projectsData } from '../../data/projects';
 import SectionHeader from '../ui/SectionHeader';
+import ProjectCard from '../ui/ProjectCard';
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -15,13 +16,7 @@ function Projects() {
     setSelectedProject(null);
   };
 
-  // Handle keyboard navigation for cards
-  const handleCardKeyDown = (e, project) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openModal(project);
-    }
-  };
+  
 
   return (
     <section id="projects" className="py-20 bg-base-200">
@@ -34,39 +29,12 @@ function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {projectsData.map((project) => (
-            <div 
+            // Project Card
+            <ProjectCard
               key={project.id}
-              className="card bg-base-100 border border-base-300 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
-              onClick={() => openModal(project)}
-              onKeyDown={(e) => handleCardKeyDown(e, project)}
-              role="button"
-              tabIndex={0}
-              aria-label={`View details for ${project.title}`}
-            >
-              <figure>
-                <img 
-                  // src={project.image} 
-                  alt={project.title} 
-                  className="w-full object-cover" 
-                />
-              </figure>
-
-              <div className="card-body">
-                <h2 className="card-title">{project.title}</h2>
-                <p className="mb-auto">{project.description}</p>
-                
-                {/* Tech Stack as Text */}
-                <p className="text-sm text-base-content/60 grow-0">
-                  {project.tags.join(' • ')}
-                </p>
-                
-                <div className="card-actions justify-end mt-4">
-                  <span className="text-sm text-primary font-medium">
-                    Click to learn more →
-                  </span>
-                </div>
-              </div>
-            </div>
+              project={project}
+              onSelect={setSelectedProject}            
+            />
           ))}
         </div>
       </div>
