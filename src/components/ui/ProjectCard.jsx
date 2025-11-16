@@ -18,7 +18,7 @@ function ProjectCard({ project, onSelect }) {
         >
             <figure>
                 <img 
-                    // src={project.image} 
+                    src={project.images.desktop} 
                     alt={project.title} 
                     className="w-full object-cover" 
                 />
@@ -29,15 +29,9 @@ function ProjectCard({ project, onSelect }) {
                 <p className="mb-auto">{project.description}</p>
                 
                 {/* Tech Stack as Text */}
-                <p className="text-sm text-base-content/60 grow-0">
+                <p className="text-sm text-base-content/60 grow-0 mt-4">
                     {project.tags.join(' • ')}
                 </p>
-                
-                <div className="card-actions justify-end mt-4">
-                    <span className="text-sm text-primary font-medium">
-                        Click to learn more →
-                    </span>
-                </div>
             </div>
         </div>
     )
