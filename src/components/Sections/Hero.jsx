@@ -1,7 +1,7 @@
 function Hero() {
   return (
-    <section id="hero" className="hero min-h-screen bg-base-200">
-      <div className="hero-content">
+    <section id="hero" className="d-hero min-h-screen d-bg-base-200">
+      <div className="d-hero-content">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hello, I'm Kenta Asakura</h1>
 
@@ -10,7 +10,7 @@ function Hero() {
             I build accessible, performant, and beautiful user experiences.
           </p>
 
-            <button className="btn btn-primary">
+            <button className="d-btn d-btn-primary">
               View Projects
             </button>
         </div>

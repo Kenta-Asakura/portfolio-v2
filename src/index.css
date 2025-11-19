@@ -6,7 +6,7 @@
   root: ":root";
   /* include: ; */
   /* exclude: ; */
-  /* prefix: ; */
+  prefix: "d-";
   /* logs: true; */
 }
 

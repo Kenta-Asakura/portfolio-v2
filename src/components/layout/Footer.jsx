@@ -53,7 +53,7 @@ function Footer() {
 
           {/* Social Links - Mobile: centered, Desktop: left */}
           {/* <div className="flex justify-center md:justify-start">
-            <ul className="flex gap-4" aria-label="Social media links">
+            <ul className="flex gap-4" aria-d-label="Social media links">
               {socialLinks.map((link) => (
                 <li key={link.name}>
                   <a

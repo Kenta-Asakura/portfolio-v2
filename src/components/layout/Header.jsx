@@ -137,7 +137,7 @@ function Header() {
     <>
        {/* Mobile Top Bar - Only visible on mobile/tablet */}
       <header 
-        className="lg:hidden navbar fixed z-20 bg-base-200 backdrop-blur-sm shadow-md"
+        className="lg:hidden d-navbar fixed z-20 bg-base-200 backdrop-blur-sm shadow-md"
         role="banner"
       >
         <nav className="container mx-auto px-4">
@@ -145,7 +145,7 @@ function Header() {
             {/* Logo */}
             <a 
               href="#hero" 
-              className="btn btn-ghost text-xl"
+              className="d-btn d-btn-ghost text-xl"
               onClick={handleNavClick}
             >
               <span className="text-2xl font-bold text-primary">K</span>
@@ -154,7 +154,7 @@ function Header() {
             {/* Mobile Menu Button */}
             <label 
               htmlFor="my-drawer-3"
-              className="btn btn-circle swap swap-rotate drawer-button text-primary"
+              className="d-btn d-btn-circle d-swap d-swap-rotate d-drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -169,7 +169,7 @@ function Header() {
 
               {/* hamburger icon */}
               <svg
-                className="swap-off fill-current"
+                className="d-swap-off fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -179,7 +179,7 @@ function Header() {
 
               {/* close icon */}
               <svg
-                className="swap-on fill-current"
+                className="d-swap-on fill-current"
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"
                 height="32"
@@ -194,25 +194,25 @@ function Header() {
 
       {/* Sidebar - Hidden on mobile/tablet */}
       <aside 
-        className="drawer drawer-end w-auto lg:drawer-open"
+        className="d-drawer d-drawer-end w-auto lg:d-drawer-open"
         role="navigation"
         aria-label="Main navigation"
       >
         <input 
           id="my-drawer-3"
           type="checkbox"
-          className="drawer-toggle" 
+          className="d-drawer-toggle" 
         />
        
-        <nav className="drawer-side">
+        <nav className="d-drawer-side">
           <label 
             htmlFor="my-drawer-3"
             aria-label="close sidebar"
-            className="drawer-overlay"
+            className="d-drawer-overlay"
             onClick={() => setIsMenuOpen(false)} // Close on overlay click
           ></label>
           
-          <div className="menu bg-base-200 justify-center gap-7 lg:gap-4 min-h-full px-4 py-8">
+          <div className="d-menu bg-base-200 justify-center gap-7 lg:gap-4 min-h-full px-4 py-8">
             <a 
               href="#hero"
               onClick={handleNavClick}
@@ -274,11 +274,11 @@ function Header() {
             {/* Social and Chatbot Buttons */}
             {/* TEST - Socials Toggle Button */}
             {/* a focusable div with tabIndex is necessary to work on all browsers. role="button" is necessary for accessibility */}
-            <div className="fab static items-center">
+            <div className="d-fab static items-center">
               <div 
                 tabIndex={0} 
                 role="button" 
-                className="btn btn-lg btn-circle btn-primary"
+                className="d-btn d-btn-lg d-btn-circle d-btn-primary"
               >
                 {/* <svg
                   aria-label="New"
@@ -316,7 +316,7 @@ function Header() {
                   id="btn social-links-section"
                   className={`lg:${showSocialLinks ? '' : 'hidden'}
                     flex lg:flex-col items-center gap-2 animate-fade-in
-                    btn btn-lg btn-circle
+                    d-btn d-btn-lg d-btn-circle
                     `}
                 >
                     <a
@@ -340,12 +340,12 @@ function Header() {
 
               {/* close button should not be focusable so it can close the FAB when clicked. It's just a visual placeholder */}
               {/* ! Daisy UI Component Styling Over written */}
-              <div className="fab-close !static none"> 
-                 <span className="btn btn-circle btn-lg btn-error">✕</span>
+              <div className="d-fab-close !static none"> 
+                 <span className="d-btn d-btn-circle d-btn-lg d-btn-error">✕</span>
               </div>
             
               {/* buttons that show up when FAB is open */}
-              {/* <button className="btn btn-lg btn-circle">
+              {/* <button className="d-btn d-btn-lg d-btn-circle">
                 <svg
                   aria-label="Camera"
                   xmlns="http://www.w3.org/2000/svg"
@@ -368,7 +368,7 @@ function Header() {
                 </svg>
               </button>
             
-              <button className="btn btn-lg btn-circle">
+              <button className="d-btn d-btn-lg d-btn-circle">
                 <svg
                   aria-label="Gallery"
                   xmlns="http://www.w3.org/2000/svg"
@@ -386,7 +386,7 @@ function Header() {
                 </svg>
               </button>
 
-              <button className="btn btn-lg btn-circle">
+              <button className="d-btn d-btn-lg d-btn-circle">
                 <svg
                   aria-label="Voice"
                   xmlns="http://www.w3.org/2000/svg"

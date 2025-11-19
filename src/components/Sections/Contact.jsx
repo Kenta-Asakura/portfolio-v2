@@ -21,7 +21,7 @@ function Contact() {
 
           <a 
             href={mailtoLink}
-            className="btn btn-primary btn-lg"
+            className="d-btn d-btn-primary d-btn-lg"
             aria-label="Send email to Kenta Asakura"
           >
             Send Email

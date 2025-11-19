@@ -36,7 +36,7 @@ function About() {
             </div>
 
             {/* Avatar */}
-            <div className="avatar">
+            <div className="d-avatar">
               <div className="w-72 ring-primary overflow-hidden">
                 {/* Desktop */}          
                 <img

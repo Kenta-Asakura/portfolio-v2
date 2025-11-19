@@ -2,7 +2,7 @@
     {/* Social Links Button */}
     <label 
     htmlFor="social-links-toggle"
-    className="btn btn-circle swap swap-rotate max-lg:hidden"
+    className="d-btn d-btn-circle d-swap d-swap-rotate max-lg:hidden"
     aria-expanded={showSocialLinks} 
     aria-controls="social-links-section"
     aria-label="Toggle social links" 
@@ -20,7 +20,7 @@
 
     {/* Social Links Icon */}
     <svg
-        className="swap-off w-6 h-6 transition-transform mx-auto"
+        className="d-swap-off w-6 h-6 transition-transform mx-auto"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -36,7 +36,7 @@
 
     {/* close icon */}
     <svg
-        className="swap-on fill-current"
+        className="d-swap-on fill-current"
         xmlns="http://www.w3.org/2000/svg"
         width="32"
         height="32"

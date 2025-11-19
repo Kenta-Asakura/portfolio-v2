@@ -1,15 +1,15 @@
 function ProjectModal({ project, onClose }) {
     return (
         <dialog 
-            className="modal modal-open"
+            className="d-modal d-modal-open"
             aria-labelledby="modal-title"
             role="dialog"
         >
-            <div className="modal-box max-w-4xl max-h-[90vh] overflow-y-auto">
+            <div className="d-modal-box max-w-4xl max-h-[90vh] overflow-y-auto">
                 {/* Close Button */}
                 <button
                     onClick={onClose}
-                    className="btn btn-lg btn-circle btn-ghost absolute right-2 top-2"
+                    className="d-btn d-btn-lg d-btn-circle d-btn-ghost absolute right-2 top-2"
                     aria-label="Close modal"
                 >
                     ✕
@@ -48,7 +48,7 @@ function ProjectModal({ project, onClose }) {
                     {project.tags.map((tag) => (
                         <span 
                             key={tag}
-                            className="badge badge-ghost badge-md"
+                            className="d-d-badge d-d-badge-ghost d-d-badge-md"
                         >
                             {tag}
                         </span>
@@ -95,12 +95,12 @@ function ProjectModal({ project, onClose }) {
                 )}
 
                 {/* Action Buttons */}
-                <div className="modal-action">
+                <div className="d-modal-action">
                     <a 
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-primary"
+                        className="d-btn d-btn-primary"
                     >
                         View Live Demo
                     </a>
@@ -109,7 +109,7 @@ function ProjectModal({ project, onClose }) {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-secondary"
+                        className="d-btn d-btn-secondary"
                     >
                         View Source Code
                     </a>
