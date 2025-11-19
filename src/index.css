@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+/* DaisyUI Configuration */
 @plugin "daisyui" {
   themes: 
     light --default, 
@@ -10,12 +12,14 @@
   /* logs: true; */
 }
 
+/* Custom Theme */
 @plugin "daisyui/theme" {
   name: "mytheme";
   default: true;
   prefersdark: false;
   color-scheme: light;
 
+  /* Design tokens */
   --color-base-100: oklch(98% 0.02 240);
   --color-base-200: oklch(95% 0.03 240);
   --color-base-300: oklch(92% 0.04 240);
@@ -99,6 +103,14 @@
   
   --color-error: oklch(71.22% 0.165 22.2);
   --color-error-content: oklch(100% 0 0);
+}
+
+/* Override DaisyUI components */
+@utility d-fab {
+  @apply static;
+}
+@utility d-fab-close {
+  @apply static;
 }
 
 /* TEST */
