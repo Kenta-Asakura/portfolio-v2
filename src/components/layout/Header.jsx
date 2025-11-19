@@ -7,12 +7,6 @@ const NAV_LINKS = [
   { name: 'Contact', href: '#contact' }
 ];
 
-// const SOCIAL_LINKS = [
-//   { name: 'GitHub', href: 'https://github.com/Kenta-Asakura', icon: 'G' },
-//   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/kenta-asakura/', icon: 'in' },
-//   { name: 'Wantedly', href: 'https://wantedly.com/', icon: 'X' }
-// ];
-
 const SOCIAL_LINKS = [
   { 
     name: 'GitHub', 
@@ -274,7 +268,7 @@ function Header() {
             {/* Social and Chatbot Buttons */}
             {/* TEST - Socials Toggle Button */}
             {/* a focusable div with tabIndex is necessary to work on all browsers. role="button" is necessary for accessibility */}
-            <div className="d-fab static items-center">
+            <div className="d-fab items-center">
               <div 
                 tabIndex={0} 
                 role="button" 
@@ -340,7 +334,7 @@ function Header() {
 
               {/* close button should not be focusable so it can close the FAB when clicked. It's just a visual placeholder */}
               {/* ! Daisy UI Component Styling Over written */}
-              <div className="d-fab-close !static none"> 
+              <div className="d-fab-close"> 
                  <span className="d-btn d-btn-circle d-btn-lg d-btn-error">✕</span>
               </div>
             
