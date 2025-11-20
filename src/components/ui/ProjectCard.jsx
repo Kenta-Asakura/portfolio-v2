@@ -9,7 +9,7 @@ function ProjectCard({ project, onSelect }) {
 
     return (
         <div 
-            className="card bg-base-100 border border-base-300 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
+            className="d-card bg-base-100 border border-base-300 cursor-pointer transition-transform hover:scale-105 hover:shadow-xl"
             onClick={() => onSelect(project)}
             onKeyDown={(e) => handleCardKeyDown(e, project)}
             role="button"
@@ -24,8 +24,8 @@ function ProjectCard({ project, onSelect }) {
                 />
             </figure>
 
-            <div className="card-body">
-                <h2 className="card-title">{project.title}</h2>
+            <div className="d-card-body">
+                <h2 className="d-card-title">{project.title}</h2>
                 <p className="mb-auto">{project.description}</p>
                 
                 {/* Tech Stack as Text */}
