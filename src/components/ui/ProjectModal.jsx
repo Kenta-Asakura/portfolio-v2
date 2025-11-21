@@ -117,7 +117,7 @@ function ProjectModal({ project, onClose }) {
             </div>
 
             {/* Modal Backdrop */}
-            <form method="dialog" className="modal-backdrop">
+            <form method="dialog" className="d-modal-backdrop">
                 <button onClick={onClose}>close</button>
             </form>
         </dialog>

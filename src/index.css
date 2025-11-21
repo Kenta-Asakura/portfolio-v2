@@ -107,10 +107,12 @@
 
 /* Override DaisyUI components */
 @utility d-fab {
-  @apply static;
+  @apply relative;
+  @apply inset-0;
 }
 @utility d-fab-close {
-  @apply static;
+  @apply !absolute;
+  @apply !inset-x-0;
 }
 
 /* TEST */

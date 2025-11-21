@@ -1,9 +1,9 @@
 function Hero() {
   return (
-    <section id="hero" className="d-hero min-h-screen d-bg-base-200">
+    <section id="hero" className="d-hero min-h-screen">
       <div className="d-hero-content">
         <div className="max-w-md">
-          <h1 className="text-5xl font-bold">Hello, I'm Kenta Asakura</h1>
+          <h1 className="text-5xl font-bold">Hi, I'm Kenta Asakura</h1>
 
           <p className="py-6 text-lg">
             Frontend Developer specializing in React and modern web technologies. 
