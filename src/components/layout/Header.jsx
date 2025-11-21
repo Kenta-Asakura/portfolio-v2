@@ -1,59 +1,6 @@
 import { useState, useEffect } from 'react';
-
-const NAV_LINKS = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' }
-];
-
-const SOCIAL_LINKS = [
-  { 
-    name: 'GitHub', 
-    href: 'https://github.com/Kenta-Asakura', 
-    icon: (
-      <svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        className="size-6"
-      >
-        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-      </svg>
-    )
-  },
-  { 
-    name: 'LinkedIn', 
-    href: 'https://www.linkedin.com/in/kenta-asakura/', 
-    icon: (
-      <svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        className="size-6"
-      >
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-    )
-  },
-  { 
-    name: 'Wantedly', 
-    href: 'https://wantedly.com/', 
-    icon: (
-      <svg
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        className="size-6"
-      >
-        <path d="M18.453 14.555c-.171-.111-.344-.223-.52-.328l-.004-.003c-1.477-.882-3.163-1.315-4.87-1.315-1.707 0-3.393.433-4.87 1.315l-.004.003c-.176.105-.349.217-.52.328C3.39 17.467 0 22.92 0 24h4.635c0-.762.254-1.91.736-2.974.483-1.064 1.188-2.041 2.086-2.642.549-.366 1.141-.614 1.755-.747.614-.132 1.25-.15 1.878-.054l.91.134.91-.134c.628-.096 1.264-.078 1.878.054.614.133 1.206.381 1.755.747.898.601 1.603 1.578 2.086 2.642.482 1.064.736 2.212.736 2.974H24c0-1.08-3.39-6.533-5.547-9.445zM13.09 12.909c3.573 0 6.479-2.91 6.479-6.454C19.569 2.91 16.663 0 13.09 0S6.612 2.91 6.612 6.455c0 3.544 2.905 6.454 6.478 6.454z"/>
-      </svg>
-    )
-  }
-];
+import { NAV_LINKS } from "../../data/navigation";
+import { SOCIAL_LINKS } from "../../data/social";
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -241,27 +188,13 @@ function Header() {
 
 
             {/* Social and Chatbot Buttons */}
-            {/* a focusable div with tabIndex is necessary to work on all browsers. role="button" is necessary for accessibility */}
             <div className="d-fab items-center">
+              {/* Social Toggle Button */}
               <div 
                 tabIndex={0} 
                 role="button" 
                 className="d-btn d-btn-lg d-btn-circle d-btn-primary"
               >
-                {/* <svg
-                  aria-label="New"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg> */}
-
-                {/* Old Icon */}
-                {/* Social Links Icon */}
                 <svg
                     className="size-6"
                     fill="none"
@@ -299,14 +232,25 @@ function Header() {
                         hover:text-primary transition-colors
                         focus:outline-none focus:ring-2 focus:ring-primary
                         text-sm"
-                      aria-label={`Visit ${social.name} profile`}
+                      aria-label={`Visit my ${social.name} profile`}
                     >
-                      <span className="font-bold text-xl">{social.icon}</span>
+                      <span className="font-bold text-xl">
+                        {social.icon}
+                        <svg
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                          className="size-6"
+                        >
+                          <path d={social.iconPath} />
+                        </svg>
+                      </span>
                     </a>
                 </button>
               ))}
 
-              {/* close button should not be focusable so it can close the FAB when clicked. It's just a visual placeholder */}
+              {/* Social Close Button */}
               <div className="d-fab-close"> 
                  <span className="d-btn d-btn-circle d-btn-lg d-btn-error mx-auto">✕</span>
               </div>
