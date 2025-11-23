@@ -74,7 +74,7 @@ function Footer() {
           {/* Copyright */}
           <div className="text-center">
             <p className="mx-auto text-xs text-base-content/60 mt-1">
-              Built with ❤️ by Kenta Asakura © {currentYear}
+              Built with 💙 by Kenta Asakura © {currentYear}
             </p>
           </div>
         </div>
