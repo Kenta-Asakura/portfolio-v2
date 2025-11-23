@@ -74,7 +74,7 @@ function Header() {
 
   return (
     <>
-       {/* Mobile Top Bar - Only visible on mobile/tablet */}
+       {/* Mobile Top Bar - Mobile/Tablet only */}
       <header 
         className="lg:hidden d-navbar fixed z-20 bg-base-200 backdrop-blur-sm shadow-md"
         role="banner"
@@ -131,7 +131,7 @@ function Header() {
         </nav>
       </header>
 
-      {/* Sidebar - Hidden on mobile/tablet */}
+      {/* Sidebar - Desktop only */}
       <aside 
         className="d-drawer d-drawer-end w-auto lg:d-drawer-open"
         role="navigation"
@@ -184,8 +184,48 @@ function Header() {
               ))}
             </ul>
 
-            {/* Social and Chatbot Buttons */}
-            <div className="max-lg:flex-row d-fab items-center">
+            {/* Social Links - Mobile/Tablet only */}
+            <div className="flex">
+              {SOCIAL_LINKS.map((social) => (
+                <button 
+                  className={`
+                    flex lg:flex-col items-center gap-2 animate-fade-in
+                    d-btn d-btn-lg d-btn-circle
+                  `}
+                >
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+                      flex items-center justify-center
+                      w-10 h-10 rounded-full
+                      bg-gray-500 hover:bg-base-300
+                      hover:text-primary transition-colors
+                      focus:outline-none focus:ring-2 focus:ring-primary
+                      text-sm"
+                    aria-label={`Visit my ${social.name} profile`}
+                  >
+                    <span className="font-bold text-xl">
+                      {social.icon}
+                      <svg
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                        className="size-6"
+                      >
+                        <path d={social.iconPath} />
+                      </svg>
+                    </span>
+                  </a>
+                </button>
+              ))}
+            </div>
+            
+            {/* Social and Chatbot Buttons - Desktop Only */}
+            <div className="max-lg:hidden d-fab items-center">
               {/* Social Toggle Button */}
               <div 
                 tabIndex={0} 
@@ -193,18 +233,18 @@ function Header() {
                 className="d-btn d-btn-lg d-btn-circle d-btn-primary"
               >
                 <svg
-                    className="size-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+                  className="size-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                    />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
               </div>
 
