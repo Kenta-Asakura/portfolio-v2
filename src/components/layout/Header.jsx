@@ -214,11 +214,13 @@ function Header() {
               </div>
 
               {/* Collapsible Social Links */}
-              <SocialLinks  />
+              <div className="flex flex-col gap-2.5 mb-4">
+                <SocialLinks  />
+              </div>
 
               {/* Social Close Button */}
               <div className="d-fab-close"> 
-                 <span className="d-btn d-btn-circle d-btn-lg d-btn-error mx-auto">✕</span>
+                 <span className="d-btn d-btn-circle d-btn-lg d-btn-primary mx-auto">✕</span>
               </div>
             </div>
            

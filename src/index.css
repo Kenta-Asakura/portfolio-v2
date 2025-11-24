@@ -70,15 +70,15 @@
   prefersdark: true;
   
   /* Primary Colors - Teal */
-  --color-primary: oklch(70.38% 0.123 182.5);
+  --color-primary: oklch(75% 0.16 182.5);
   --color-primary-content: oklch(100% 0 0);
   
   /* Secondary Colors - Cyan */
-  --color-secondary: oklch(71.48% 0.126 215.2);
+  --color-secondary: oklch(76% 0.165 215.2);
   --color-secondary-content: oklch(100% 0 0);
   
   /* Accent - Green */
-  --color-accent: oklch(69.59% 0.149 162.5);
+  --color-accent: oklch(75% 0.18 162.5);
   --color-accent-content: oklch(100% 0 0);
   
   /* Neutral - Dark Gray */
