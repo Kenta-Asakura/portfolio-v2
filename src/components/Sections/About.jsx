@@ -3,6 +3,15 @@ import AvatarImgDesktop from "../../assets/images/profile-header-desktop.jpg";
 import AvatarImgMobile from "../../assets/images/profile-header-mobile.jpg";
 
 function About() {
+  const techStack = [
+    'React',
+    'Tailwind CSS', 
+    'JavaScript',
+    'Node.js',
+    'Express',
+    'PostgreSQL'
+  ];
+
   return (
     <section id="about" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
@@ -13,7 +22,7 @@ function About() {
           />
           
           <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="flex-1 prose lg:prose-lg">
+            <div className="flex-1 space-y-4 text-base lg:text-lg text-base-content/90 leading-relaxed">
               {/* Bio */}
               <p>
                 With Filipino-Japanese heritage and experience working across culturally diverse teams, 
@@ -37,16 +46,41 @@ function About() {
               </p>
 
               <p> 
-                When I'm not at my desk coding, you'll find me pushing myself at the skatepark or the gym
+                When I'm not at my desk coding, you'll find me pushing myself at the skatepark or the gym—
                 same energy, different terrain. 🛹🏋🏻
               </p>
               
               {/* Main Tech Stack */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold mb-2">Main Technologies I work with</h3>
-                <p className="text-base-content/80">
-                  React • Tailwind CSS • JavaScript • Node.js • Express • PostgreSQL
-                </p>
+              <div className="mt-8 pt-6">
+                <h3 className="text-xl font-semibold mb-4 text-base-content">
+                  Main Technologies I work with
+                </h3>
+                
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {techStack.map((tech, index) => (
+                    <li 
+                      key={tech}
+                      className="flex items-center gap-3 text-base text-base-content/80"
+                    >
+                      {/* Chevron Icon */}
+                      <svg 
+                        className="w-4 h-4 text-primary flex-shrink-0"
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M9 5l7 7-7 7" 
+                        />
+                      </svg>
+                      <span>{tech}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
 
