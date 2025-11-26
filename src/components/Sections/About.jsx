@@ -4,26 +4,26 @@ import AvatarImgMobile from "../../assets/images/profile-header-mobile.jpg";
 
 function About() {
   const techStack = [
+    'JavaScript (ES6+)',
+    'TypeScript',
     'React',
-    'Tailwind CSS', 
-    'JavaScript',
-    'Node.js',
-    'Express',
-    'PostgreSQL'
+    'Tailwind CSS',
+    'Node.js/Express',
+    'PostgreSQL',
   ];
 
   return (
     <section id="about" className="py-20 bg-base-200">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-           <SectionHeader 
+        <div className="max-w-6xl mx-auto">
+          <SectionHeader 
             headerNumber="01."
             headerTitle="About Me" 
           />
           
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            <div className="flex-1 space-y-4 text-base lg:text-lg text-base-content/90 leading-relaxed">
-              {/* Bio */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            {/* Bio Content */}
+            <div className="flex-1 space-y-5 text-base-content/80 leading-relaxed">
               <p>
                 With Filipino-Japanese heritage and experience working across culturally diverse teams, 
                 I bring a unique perspective to software development. My journey into web development 
@@ -33,10 +33,12 @@ function About() {
               </p>
 
               <p>
-                Fast-forward to today, and I've had the opportunity to work across different industries, from 
-                hospitality tech to consulting agencies. While I'm comfortable working with various technologies 
-                across the stack, I'm most at home building modern web applications where clean code meets 
-                great user experience.
+                Fast-forward to today, and I've had the privilege of working at{' '}
+                <span className="text-primary font-medium">a consulting agency</span>,{' '}
+                <span className="text-primary font-medium">a hospitality tech company</span>, and{' '}
+                <span className="text-primary font-medium">a digital solutions provider</span>. 
+                While I'm comfortable working with various technologies across the stack, I'm most 
+                at home building modern web applications where clean code meets great user experience.
               </p>
 
               <p>
@@ -50,21 +52,21 @@ function About() {
                 same energy, different terrain. 🛹🏋🏻
               </p>
               
-              {/* Main Tech Stack */}
-              <div className="mt-8 pt-6">
-                <h3 className="text-xl font-semibold mb-4 text-base-content">
-                  Main Technologies I work with
-                </h3>
+              {/* Tech Stack Section */}
+              <div className="pt-6">
+                <p className="text-base-content/70 mb-4">
+                  Here are a few technologies I've been working with recently:
+                </p>
                 
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {techStack.map((tech, index) => (
+                <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
+                  {techStack.map((tech) => (
                     <li 
                       key={tech}
-                      className="flex items-center gap-3 text-base text-base-content/80"
+                      className="flex items-center gap-3 text-sm font-mono text-base-content/70"
                     >
                       {/* Chevron Icon */}
                       <svg 
-                        className="w-4 h-4 text-primary flex-shrink-0"
+                        className="w-3 h-3 text-primary flex-shrink-0"
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"
@@ -84,27 +86,30 @@ function About() {
               </div>
             </div>
 
-            {/* Avatar */}
-            <div className="d-avatar">
-              <div className="w-72 ring-primary overflow-hidden">
-                {/* Desktop */}          
+             {/* Avatar with Overlay Effect */}
+            <div className="lg:w-80 w-full flex-shrink-0">
+              <div className="relative rounded-lg overflow-hidden group">
+                {/* Teal overlay */}
+                <div className="absolute inset-0 bg-primary/30 mix-blend-multiply transition-opacity group-hover:opacity-0 z-10"></div>
+                
+                {/* Desktop Image */}
                 <img
                   src={AvatarImgDesktop}
-                  alt="Your Name"
-                  className="hidden lg:block w-full h-auto object-cover"
+                  alt="Kenta Asakura"
+                  className="hidden lg:block w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
 
-                {/* Mobile */}
+                {/* Mobile Image */}
                 <img
                   src={AvatarImgMobile}
                   alt="Kenta Asakura"
-                  className="block lg:hidden w-full h-auto object-cover"
+                  className="block lg:hidden w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             </div>
+            
           </div>
         </div>
-
       </div>
     </section>
   );
