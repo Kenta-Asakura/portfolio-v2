@@ -21,7 +21,7 @@ function About() {
             headerTitle="About Me" 
           />
           
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+          <div className="flex max-lg:flex-col gap-16 max-lg:items-center">
             {/* Bio Content */}
             <div className="flex-1 space-y-5 text-base-content/80 leading-relaxed">
               <p>
