@@ -86,28 +86,23 @@ function About() {
               </div>
             </div>
 
-             {/* Avatar with Overlay Effect */}
-            <div className="lg:w-80 w-full flex-shrink-0">
-              <div className="relative rounded-lg overflow-hidden group">
-                {/* Teal overlay */}
-                <div className="absolute inset-0 bg-primary/30 mix-blend-multiply transition-opacity group-hover:opacity-0 z-10"></div>
-                
-                {/* Desktop Image */}
-                <img
-                  src={AvatarImgDesktop}
-                  alt="Kenta Asakura"
-                  className="hidden lg:block w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                />
+            {/* Avatar with Overlay Effect and Custom animation */}
+            <div className="flex-shrink-0">
+              {/* Desktop Image */}
+              <img
+                src={AvatarImgDesktop}
+                alt="Kenta Asakura"
+                className="about-avatar hidden lg:block w-full h-auto object-cover"
+              />
 
-                {/* Mobile Image */}
-                <img
-                  src={AvatarImgMobile}
-                  alt="Kenta Asakura"
-                  className="block lg:hidden w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
+              {/* Mobile Image */}
+              <img
+                src={AvatarImgMobile}
+                alt="Kenta Asakura"
+                className="about-avatar block lg:hidden w-full h-auto object-cover"
+              />
             </div>
-            
+           
           </div>
         </div>
       </div>

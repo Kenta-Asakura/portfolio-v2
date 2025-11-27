@@ -120,3 +120,37 @@
   @apply bg-amber-200;
 } */
 
+/* About section avatar overlay animation */
+.about-avatar {
+  --s: 300px;   /* Size - width/height of the image */
+  --b: 3px;     /* Border - thickness of the border on hover */
+  --g: 14px;    /* Gap - distance between image and border on hover */
+  --c: #4ECDC4; /* Update to match your theme color */
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s) / 2) solid rgba(0, 0, 0, 0.6);
+  outline-offset: calc(var(--s) / -2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+.about-avatar:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+/* Responsive sizing */
+/* @media (max-width: 1024px) {
+  .about-avatar {
+    --s: 200px;
+    --g: 12px;
+  }
+}
+@media (max-width: 640px) {
+  .about-avatar {
+    --s: 180px;
+    --g: 10px;
+    --b: 6px;
+  }
+} */
