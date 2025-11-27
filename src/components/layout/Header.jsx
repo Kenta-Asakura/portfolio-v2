@@ -169,7 +169,7 @@ function Header() {
                     onClick={handleNavClick}
                     className={`
                       flex items-center rounded-lg
-                      text-sm font-medium transition-all 
+                      text-lg font-medium font-bold uppercase transition-all 
                       hover:bg-base-200 hover:text-primary hover:translate-x-1 
                       focus:outline-none focus:ring-2 focus:ring-primary 
                       ${activeSection === link.href.slice(1) 
@@ -185,7 +185,7 @@ function Header() {
             </ul>
 
             {/* Social Links - Mobile/Tablet only */}
-            <div className="max-lg:flex hidden">
+            <div className="max-lg:flex gap-x-3.5 hidden">
               <SocialLinks />
             </div>
             
