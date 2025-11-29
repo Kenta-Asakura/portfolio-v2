@@ -5,12 +5,8 @@ function NavLinks({ handleNavClick }) {
     const [activeSection, setActiveSection] = useState('');
 
     // Intersection Observer for active section tracking
-    useEffect(() => {
-      const observerOptions = {
-        root: null,
-        rootMargin: '-20% 0px -70% 0px',
-        threshold: 0
-      };
+     useEffect(() => {
+      const observers = []; // Store observers for cleanup
   
       const observerCallback = (entries) => {
         entries.forEach((entry) => {
@@ -20,14 +16,25 @@ function NavLinks({ handleNavClick }) {
         });
       };
   
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-  
-      NAV_LINKS.forEach((link) => {
+      NAV_LINKS.forEach((link, index) => {
         const element = document.querySelector(link.href);
-        if (element) observer.observe(element);
+        if (element) {
+          const isLastSection = index === NAV_LINKS.length - 1;
+          
+          const observer = new IntersectionObserver(observerCallback, {
+            root: null,
+            rootMargin: isLastSection ? '-10% 0px -20% 0px' : '-10% 0px -70% 0px',
+            threshold: 0
+          });
+          
+          observer.observe(element);
+          observers.push(observer); // Store for cleanup
+        }
       });
   
-      return () => observer.disconnect();
+      return () => {
+        observers.forEach(observer => observer.disconnect());
+      };
     }, []);
 
     return (

@@ -115,11 +115,6 @@
   @apply !inset-x-0;
 }
 
-/* TEST */
-/* .btn {
-  @apply bg-amber-200;
-} */
-
 /* About section avatar overlay animation */
 .about-avatar {
   --s: 300px;   /* Size - width/height of the image */
