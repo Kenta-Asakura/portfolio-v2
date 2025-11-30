@@ -5,6 +5,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  
   theme: {
     extend: {
       fontFamily: {
@@ -16,32 +17,32 @@ export default {
 
   plugins: [daisyui],
 
-  daisyui: {
-    themes: [
-      {
-        portfolio: {
-          // Custom colors
-          "primary": "#14b8a6",        // Teal accent (buttons, links, highlights)
-          "secondary": "#06b6d4",      // Cyan (secondary actions)
-          "accent": "#10b981",         // Green (success states)
-          "neutral": "#2a323c",        // Neutral gray
+  // daisyui: {
+  //   themes: [
+  //     {
+  //       portfolio: {
+  //         // Custom colors
+  //         "primary": "#14b8a6",        // Teal accent (buttons, links, highlights)
+  //         "secondary": "#06b6d4",      // Cyan (secondary actions)
+  //         "accent": "#10b981",         // Green (success states)
+  //         "neutral": "#2a323c",        // Neutral gray
           
-          // Base colors (backgrounds)
-          "base-100": "#1d232a",       // Main background (your dark color)
-          "base-200": "#252c35",       // Slightly lighter (cards, sections)
-          "base-300": "#2d3541",       // Even lighter (borders, dividers)
+  //         // Base colors (backgrounds)
+  //         "base-100": "#1d232a",       // Main background (your dark color)
+  //         "base-200": "#252c35",       // Slightly lighter (cards, sections)
+  //         "base-300": "#2d3541",       // Even lighter (borders, dividers)
           
-          // Semantic colors
-          "info": "#3abff8",           
-          "success": "#36d399",        
-          "warning": "#fbbd23",        
-          "error": "#f87272",
+  //         // Semantic colors
+  //         "info": "#3abff8",           
+  //         "success": "#36d399",        
+  //         "warning": "#fbbd23",        
+  //         "error": "#f87272",
           
-          // Text colors (DaisyUI auto-generates based on background)
-          "base-content": "#e8eaed",   // Primary text color
-          "primary-content": "#ffffff", // Text on primary color
-        },
-      },
-    ],
-  },
+  //         // Text colors (DaisyUI auto-generates based on background)
+  //         "base-content": "#e8eaed",   // Primary text color
+  //         "primary-content": "#ffffff", // Text on primary color
+  //       },
+  //     },
+  //   ],
+  // },
 }
