@@ -1,0 +1,13 @@
+/* ==============================================
+   UTILITY OVERRIDES
+   Custom utility classes and DaisyUI overrides
+   ============================================== */
+
+/* FAB (Floating Action Button) utilities */
+@utility d-fab {
+  @apply relative inset-0;
+}
+
+@utility d-fab-close {
+  @apply !absolute !inset-x-0;
+}

@@ -2,15 +2,4 @@
 @import "./styles/themes.css";
 /* @import "./styles/typography.css"; */
 @import "./styles/components.css";
-/* @import "./styles/utilities.css"; */
-
-/* CUSTOM STYLING */
-/* Override DaisyUI components */
-@utility d-fab {
-  @apply relative;
-  @apply inset-0;
-}
-@utility d-fab-close {
-  @apply !absolute;
-  @apply !inset-x-0;
-}
+@import "./styles/utilities.css";
