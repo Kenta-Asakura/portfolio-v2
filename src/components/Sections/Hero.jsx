@@ -1,6 +1,6 @@
 function Hero() {
   return (
-    <section id="hero" className="d-hero min-h-screen bg-base-200">
+    <section id="hero" className="d-hero min-h-screen bg-base-100">
       <div className="d-hero-content">
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Hi, I'm Kenta Asakura</h1>

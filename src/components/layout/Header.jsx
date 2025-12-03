@@ -49,7 +49,7 @@ function Header() {
     <>
        {/* Mobile Top Bar - Mobile/Tablet only */}
       <header 
-        className="lg:hidden d-navbar fixed z-20 bg-base-200 backdrop-blur-sm shadow-md"
+        className="lg:hidden d-navbar fixed z-20 bg-base-100 backdrop-blur-sm shadow-md"
         role="banner"
       >
         <nav className="container mx-auto px-4">
@@ -124,7 +124,7 @@ function Header() {
             onClick={() => setIsMenuOpen(false)} // Close on overlay click
           ></label>
           
-          <div className="d-menu bg-base-200 justify-center gap-7 lg:gap-4 min-h-full px-4 py-8">
+          <div className="d-menu bg-base-100 justify-center gap-7 lg:gap-4 min-h-full px-4 py-8">
             <a 
               href="#hero"
               onClick={handleNavClick}

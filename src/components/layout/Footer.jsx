@@ -42,7 +42,7 @@ function Footer() {
 
   return (
     <footer 
-      className="bg-base-200 border-t border-base-300 align-bottom"
+      className="bg-base-100 border-t border-base-300 align-bottom"
       role="contentinfo"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-6">

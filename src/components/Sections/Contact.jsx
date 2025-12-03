@@ -6,7 +6,7 @@ function Contact() {
   const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
   return (
-    <section id="contact" className="py-20 bg-base-200">
+    <section id="contact" className="py-20 bg-base-100">
       <div className="container mx-auto px-4">
         <SectionHeader 
           headerNumber="04."

@@ -63,7 +63,7 @@ function Experience() {
   };
 
   return (
-    <section id="experience" className="py-20 bg-base-200">
+    <section id="experience" className="py-20 bg-base-100">
       <div className="container mx-auto px-4">
         <SectionHeader 
           headerNumber="02."

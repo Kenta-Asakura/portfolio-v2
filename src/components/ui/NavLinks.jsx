@@ -45,12 +45,12 @@ function NavLinks({ handleNavClick }) {
                         href={link.href}
                         onClick={handleNavClick}
                         className={`
-                            flex items-center rounded-lg
-                            text-lg font-medium font-bold uppercase transition-all 
-                            hover:bg-base-200 hover:text-primary hover:translate-x-1 
+                            flex items-center rounded-lg 
+                            text-lg font-button font-medium font-bold uppercase transition-all 
+                            hover:bg-base-100 hover:text-primary hover:translate-x-1 
                             focus:outline-none focus:ring-2 focus:ring-primary 
                             ${activeSection === link.href.slice(1) 
-                              ? 'text-primary bg-base-200 translate-x-1' 
+                              ? 'text-primary bg-base-100 translate-x-1' 
                               : 'text-base-content'
                             }`}
                         aria-current={activeSection === link.href.slice(1) ? 'page' : undefined}
