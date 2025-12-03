@@ -89,7 +89,8 @@ function Experience() {
                   onClick={() => handleTabChange(job.id)}
                   disabled={isAnimating}
                   className={`
-                    px-5 py-3 text-left font-mono text-sm whitespace-nowrap
+                    px-5 py-3 text-left 
+                    font-button text-sm whitespace-nowrap
                     transition-all duration-200 
                     border-l-0 md:border-l-2 border-b-2 md:border-b-0
                     focus:outline-none focus:bg-primary/10
