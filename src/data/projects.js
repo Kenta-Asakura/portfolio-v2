@@ -38,30 +38,30 @@ export const projectsData = [
     },
   },
 
-  {
-    id: 'name-base',
-    title: 'Name Base',
-    description: 'Collaborative task management with real-time updates',
-    longDescription:
-      'Developed a collaborative task management application that enables teams to work together in real-time. Features include drag-and-drop task organization, team member assignments, and instant synchronization across all connected clients.',
-    images: {
-      desktop: null, // * Placeholder until the image is added
-    //  ! mobile: null, // * -
-      alt: 'Name Base task management dashboard interface',
-    },
-    tags: ['React', 'DaisyUI', 'Hono', 'Docker'],
-    features: [
-      'Team member assignments',
-      'Project boards and lists',
-      'Activity tracking and notifications',
-    ],
-    challenges:
-      'Ensuring data consistency across multiple users while maintaining real-time updates required implementing optimistic UI updates and conflict resolution strategies.',
-    links: {
-      github: 'https://github.com/yourusername/project2',
-      demo: 'https://test.com',
-    },
-  },
+  // {
+  //   id: 'name-base',
+  //   title: 'Name Base',
+  //   description: 'Collaborative task management with real-time updates',
+  //   longDescription:
+  //     'Developed a collaborative task management application that enables teams to work together in real-time. Features include drag-and-drop task organization, team member assignments, and instant synchronization across all connected clients.',
+  //   images: {
+  //     desktop: null, // * Placeholder until the image is added
+  //   //  ! mobile: null, // * -
+  //     alt: 'Name Base task management dashboard interface',
+  //   },
+  //   tags: ['React', 'DaisyUI', 'Hono', 'Docker'],
+  //   features: [
+  //     'Team member assignments',
+  //     'Project boards and lists',
+  //     'Activity tracking and notifications',
+  //   ],
+  //   challenges:
+  //     'Ensuring data consistency across multiple users while maintaining real-time updates required implementing optimistic UI updates and conflict resolution strategies.',
+  //   links: {
+  //     github: 'https://github.com/yourusername/project2',
+  //     demo: 'https://test.com',
+  //   },
+  // },
 
   {
     id: 'weather-vibez',
