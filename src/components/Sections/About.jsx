@@ -87,19 +87,19 @@ function About() {
             </div>
 
             {/* Avatar with Overlay Effect and Custom animation */}
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 rounded-md">
               {/* Desktop Image */}
               <img
                 src={AvatarImgDesktop}
                 alt="Kenta Asakura"
-                className="about-avatar hidden lg:block w-full h-auto object-cover"
+                className="about-avatar hidden lg:block w-full h-auto object-cover rounded-md"
               />
 
               {/* Mobile Image */}
               <img
                 src={AvatarImgMobile}
                 alt="Kenta Asakura"
-                className="about-avatar block lg:hidden w-full h-auto object-cover"
+                className="about-avatar block lg:hidden w-full h-auto object-cover rounded-md"
               />
             </div>
            

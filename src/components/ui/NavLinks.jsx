@@ -45,10 +45,10 @@ function NavLinks({ handleNavClick }) {
                         href={link.href}
                         onClick={handleNavClick}
                         className={`
-                            flex items-center rounded-lg 
-                            text-base-content/80 text-lg font-secondary font-normal uppercase transition-all 
-                            hover:bg-base-100 hover:text-primary hover:translate-x-1 
-                            focus:outline-none focus:ring-2 focus:ring-primary 
+                            flex items-center rounded-lg
+                            font-secondary text-lg lg:text-base 
+                            text-base-content/80  font-normal uppercase transition-all 
+                            hover:bg-base-100 hover:text-primary hover:translate-x-1
                             ${activeSection === link.href.slice(1) 
                               ? 'text-primary bg-base-100 translate-x-1' 
                               : 'text-base-content'

@@ -128,7 +128,7 @@ function Header() {
             <a 
               href="#hero"
               onClick={handleNavClick}
-              className="hidden lg:block mb-8 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg"
+              className="hidden lg:block mb-8 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-lg pl-4"
             >
               <h1 className="text-2xl font-bold text-primary">K</h1>
             </a>
@@ -146,7 +146,7 @@ function Header() {
               <div 
                 tabIndex={0} 
                 role="button" 
-                className="d-btn d-btn-lg d-btn-circle d-btn-primary"
+                className="d-btn d-btn-outline d-btn-lg d-btn-circle d-btn-primary"
               >
                 <svg
                   className="size-6"
