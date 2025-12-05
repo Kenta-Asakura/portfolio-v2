@@ -1,3 +1,5 @@
+import ChevronIcon from './ChevronIcon';
+
 function ProjectModal({ project, onClose }) {
     return (
         <dialog 
@@ -75,7 +77,7 @@ function ProjectModal({ project, onClose }) {
                                     key={index}
                                     className="flex items-start gap-2"
                                 >
-                                    <span className="text-primary mt-1">✓</span>
+                                    <ChevronIcon className="text-primary mt-1" />
                                     <span className="text-base-content/80">{feature}</span>
                                 </li>
                             ))}

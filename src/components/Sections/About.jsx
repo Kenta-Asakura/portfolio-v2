@@ -1,4 +1,5 @@
 import SectionHeader from "../ui/SectionHeader";
+import ChevronIcon from '../ui/ChevronIcon';
 import AvatarImgDesktop from "../../assets/images/profile-header-desktop.jpg";
 import AvatarImgMobile from "../../assets/images/profile-header-mobile.jpg";
 
@@ -60,25 +61,11 @@ function About() {
                 
                 <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                   {techStack.map((tech) => (
-                    <li 
+                   <li 
                       key={tech}
                       className="flex items-center gap-3 text-sm font-mono text-base-content/70"
                     >
-                      {/* Chevron Icon */}
-                      <svg 
-                        className="w-3 h-3 text-primary flex-shrink-0"
-                        fill="none" 
-                        viewBox="0 0 24 24" 
-                        stroke="currentColor"
-                        aria-hidden="true"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M9 5l7 7-7 7" 
-                        />
-                      </svg>
+                      <ChevronIcon className="text-primary" />
                       <span>{tech}</span>
                     </li>
                   ))}

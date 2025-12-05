@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { experienceData } from '../../data/experiences';
+
 import SectionHeader from '../ui/SectionHeader';
+import ChevronIcon from '../ui/ChevronIcon';
 
 function Experience() {
   // State management for active tab and animations
@@ -117,21 +119,7 @@ function Experience() {
                           transitionDelay: isAnimating ? '0ms' : `${index * 75}ms`
                         }}
                       >
-                        {/* Chevron Icon */}
-                        <svg 
-                          className="w-4 h-4 text-primary flex-shrink-0 mt-1.5"
-                          fill="none" 
-                          viewBox="0 0 24 24" 
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth={2} 
-                            d="M9 5l7 7-7 7" 
-                          />
-                        </svg>
+                        <ChevronIcon className="text-primary mt-1.5" />
                         <span>{item}</span>
                       </li>
                     ))}
