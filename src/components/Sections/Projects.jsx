@@ -7,12 +7,6 @@ import ProjectModal from '../ui/ProjectModal';
 function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const openModal = (project) => {
-    setSelectedProject(project);
-    // !TEST - Log the clicked project title
-    // console.log('Clicked:', project.title)
-  };
-
   return (
     <section id="projects" className="py-20 bg-base-100">
       <div className="container mx-auto px-4">
@@ -21,10 +15,10 @@ function Projects() {
           headerTitle="My Projects" 
         />
 
-        {/* Projects Grid */}
+        {/* Projects Card Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {/* Project Card */}
           {projectsData.map((project) => (
-            // Project Card
             <ProjectCard
               key={project.id}
               project={project}

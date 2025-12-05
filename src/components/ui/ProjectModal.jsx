@@ -100,7 +100,7 @@ function ProjectModal({ project, onClose }) {
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="d-btn d-btn-primary"
+                        className="d-btn d-btn-outline d-btn-primary"
                     >
                         View Live Demo
                     </a>
@@ -109,7 +109,7 @@ function ProjectModal({ project, onClose }) {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="d-btn d-btn-secondary"
+                        className="d-btn d-btn-outline d-btn-secondary"
                     >
                         View Source Code
                     </a>

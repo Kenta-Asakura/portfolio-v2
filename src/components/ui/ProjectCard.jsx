@@ -1,5 +1,5 @@
 function ProjectCard({ project, onSelect }) {
-      // Handle keyboard navigation for cards
+    // Handle keyboard navigation for cards
     const handleCardKeyDown = (e, project) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
