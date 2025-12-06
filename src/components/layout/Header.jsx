@@ -47,7 +47,7 @@ function Header() {
             {/* Mobile Menu Button */}
             <label 
               htmlFor="my-drawer-3"
-              className="d-btn d-btn-circle d-swap d-swap-rotate d-drawer-button text-primary"
+              className="d-swap d-swap-rotate d-drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((prev) => !prev)}
