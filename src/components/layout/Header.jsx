@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import SocialLinks from '../ui/SocialLinks';
 import NavLinks from '../ui/NavLinks';
 
@@ -25,25 +25,6 @@ function Header() {
       }
     }
   };
-
-  // Close menu on Escape & prevent body scroll
-  useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') setIsMenuOpen(false);
-    };
-
-    if (isMenuOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [isMenuOpen]);
 
   return (
     <>
