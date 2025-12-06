@@ -13,12 +13,11 @@ function SocialLinks() {
                         d-btn d-btn-lg d-btn-circle
                         bg-base-300/50 
                         border-2 border-base-300
-                        text-base-content hover:text-primary
+                        text-base-content/80 hover:text-primary
                         transition-all duration-200 ease-in-out
                         hover:scale-110 hover:shadow-lg
                         focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
-                        group
-                    "
+                        group"
                     aria-label={`Visit my ${social.name} profile`}
                 >
                     <span className="font-bold text-xl">
