@@ -1,21 +1,24 @@
 /* DaisyUI Configuration */
 @plugin "daisyui" {
   themes: 
-    light --default, 
-    dark --prefersdark;
+    /* light --default, 
+    dark --prefersdark; */
+    /* ! Set Dark as default for now */
+    dark --default --prefersdark,
+    light;
   root: ":root";
   prefix: "d-";
 }
 
 /* Custom Theme - Light */
-@plugin "daisyui/theme" {
+/* @plugin "daisyui/theme" {
   name: "mytheme";
   default: true;
   prefersdark: false;
-  color-scheme: light;
+  color-scheme: light; */
 
   /* Design tokens */
-  --color-base-100: oklch(98% 0.02 240);
+  /* --color-base-100: oklch(98% 0.02 240);
   --color-base-200: oklch(95% 0.03 240);
   --color-base-300: oklch(92% 0.04 240);
   --color-base-content: oklch(20% 0.05 240);
@@ -34,28 +37,29 @@
   --color-warning: oklch(80% 0.25 80);
   --color-warning-content: oklch(20% 0.05 80);
   --color-error: oklch(65% 0.3 30);
-  --color-error-content: oklch(98% 0.01 30);
+  --color-error-content: oklch(98% 0.01 30); */
 
   /* Border radius */
-  --radius-selector: 1rem;
+  /* --radius-selector: 1rem;
   --radius-field: 0.25rem;
-  --radius-box: 0.5rem;
+  --radius-box: 0.5rem; */
 
   /* Base sizes */
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
+  /* --size-selector: 0.25rem;
+  --size-field: 0.25rem; */
 
   /* Border size */
-  --border: 1px;
+  /* --border: 1px; */
 
   /* Effects */
-  --depth: 1;
+  /* --depth: 1;
   --noise: 0;
-}
+} */
 
 /* Custom Theme - Dark */
 @plugin "daisyui/theme" {
   name: "dark";
+  default: true;
   prefersdark: true;
   
   /* Primary Colors - Teal */
