@@ -4,11 +4,22 @@ import NavLinks from "../ui/NavLinks";
 
 function MobileNav () {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  
-  // Smooth scroll handler
-  const handleNavClick = (e) => {
-    setIsMenuOpen(false);
 
+  // Handle toggle button click
+  const handleToggle = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  // Close drawer function
+  const closeDrawer = () => {
+    setIsMenuOpen(false);
+    document.getElementById('my-drawer-3').checked = false;
+  };
+  
+  const handleNavClick = (e) => {
+    closeDrawer();
+
+    // Smooth scroll handler
     const href = e.currentTarget.getAttribute('href');
 
     if (href?.startsWith('#')) {
@@ -51,7 +62,7 @@ function MobileNav () {
               className="d-swap d-swap-rotate d-drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
-              onClick={() => setIsMenuOpen((prev) => !prev)}
+              onClick={handleToggle}
             >
               <input 
                 type="checkbox" 
@@ -88,36 +99,35 @@ function MobileNav () {
       </header>
 
       {/* Mobile Sidebar */}
-      {isMenuOpen &&
-        <aside 
-            className="d-drawer d-drawer-end w-auto"
-            role="navigation"
-            aria-label="Main navigation"
-        >
-          <input 
-            id="my-drawer-3"
-            type="checkbox"
-            className="d-drawer-toggle" 
-          />
-      
-          <nav className="d-drawer-side">
-            <label 
-              htmlFor="my-drawer-3"
-              aria-label="close sidebar"
-              className="d-drawer-overlay"
-              onClick={() => setIsMenuOpen(false)} // Close on overlay click
-            ></label>
-            
-            <div className="d-menu bg-base-100 justify-center gap-7 min-h-full px-4 py-8">
-              <NavLinks handleNavClick={handleNavClick} />
+      <aside 
+        className="d-drawer d-drawer-end w-auto"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <input 
+          id="my-drawer-3"
+          type="checkbox"
+          className="d-drawer-toggle" 
+          checked={isMenuOpen}
+        />
+    
+        <nav className="d-drawer-side">
+          <label 
+            for="my-drawer-3" 
+            aria-label="close sidebar" 
+            className="d-drawer-overlay"
+            onClick={closeDrawer}
+          ></label>
 
-              <div className="flex gap-x-3.5">
-                <SocialLinks />
-              </div>
+          <div className="d-menu bg-base-100 justify-center gap-7 min-h-full px-4 py-8">
+            <NavLinks handleNavClick={handleNavClick} />
+
+            <div className="flex gap-x-3.5">
+              <SocialLinks />
             </div>
-          </nav>
-        </aside>  
-      }
+          </div>
+        </nav>
+      </aside>  
     </>
   )
 }
