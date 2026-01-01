@@ -113,7 +113,7 @@ function MobileNav () {
     
         <nav className="d-drawer-side">
           <label 
-            for="my-drawer-3" 
+            htmlFor="my-drawer-3" 
             aria-label="close sidebar" 
             className="d-drawer-overlay"
             onClick={closeDrawer}
