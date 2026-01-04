@@ -8,7 +8,7 @@ function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="py-20 bg-base-100">
+    <section id="projects" className="py-20 bg-base-100 min-h-[60vh]">
       <div className="container mx-auto px-4">
         <SectionHeader 
           headerNumber="03."
