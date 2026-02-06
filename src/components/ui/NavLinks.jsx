@@ -77,7 +77,7 @@ function NavLinks({ handleNavClick }) {
     }, []);
 
     return (
-        <ul className="lg:mb-auto">
+        <ul className="lg:mb-auto flex flex-col gap-1.5">
             {NAV_LINKS.map((link) => {
                 const sectionId = link.href.slice(1);
                 const isActive = activeSection === sectionId;
@@ -88,13 +88,13 @@ function NavLinks({ handleNavClick }) {
                             href={link.href}
                             onClick={handleNavClick}
                             className={`
-                                flex items-center rounded-lg
+                                flex items-center rounded-lg py-1
                                 text-lg lg:text-base 
                                 text-base-content/80 font-secondary font-normal uppercase transition-all 
                                 hover:bg-base-100 hover:text-primary hover:translate-x-1 
                                 focus:outline-none focus:ring-2 focus:ring-primary 
                                 ${isActive 
-                                  ? 'text-primary bg-base-100 translate-x-1' 
+                                  ? 'text-primary bg-base-100 translate-x-1.5' 
                                   : 'text-base-content'
                                 }`}
                             aria-current={isActive ? 'page' : undefined}
