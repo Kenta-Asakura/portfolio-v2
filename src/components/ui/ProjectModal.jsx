@@ -99,7 +99,7 @@ function ProjectModal({ project, onClose }) {
                 {/* Action Buttons */}
                 <div className="d-modal-action">
                     <a 
-                        href={project.demo}
+                        href={project.links.demo}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="d-btn d-btn-outline d-btn-primary"
@@ -108,7 +108,7 @@ function ProjectModal({ project, onClose }) {
                     </a>
                     
                     <a 
-                        href={project.github}
+                        href={project.links.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="d-btn d-btn-outline d-btn-secondary"
