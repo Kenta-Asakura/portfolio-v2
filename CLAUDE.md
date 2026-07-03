@@ -17,6 +17,27 @@ No test suite is configured.
 
 Single-page React portfolio with a fixed sidebar layout. All content is rendered in one page (`App.jsx`) with anchor-based scroll navigation.
 
+## Folder Structure
+
+```
+src/
+├── App.jsx              # Mounts sections in order; root component
+├── main.jsx             # React entry point
+├── index.css             # Tailwind/DaisyUI setup, @theme font block, imports styles/
+├── assets/
+│   ├── icons/
+│   └── images/
+│       └── projects/     # Project screenshots referenced from data/projects.js
+├── components/
+│   ├── layout/            # Layout.jsx, Header.jsx, Main.jsx, Footer.jsx, DesktopSidebar.jsx, MobileNav.jsx
+│   ├── sections/           # Hero, About, Experience, Projects, Contact
+│   └── ui/                 # Reusable pieces: ProjectCard, ProjectModal, NavLinks, SocialLinks, SectionHeader, ScrollToTop, ChevronIcon
+├── data/                  # Static content: projects.js, experiences.js, navigation.js, social.js
+├── hooks/                 # Shared custom hooks
+├── styles/                # Themed CSS partials: base.css, themes.css, typography.css, components.css, utilities.css
+└── utils/                 # Shared utility functions
+```
+
 **Layout structure** (`src/components/layout/`):
 - `Layout.jsx` — root shell: `flex-col lg:flex-row` with a sticky sidebar + scrollable main column
 - `Header.jsx` — renders `MobileNav` on small screens and `DesktopSidebar` on `lg+`
