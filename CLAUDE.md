@@ -13,6 +13,42 @@ npm run lint      # Run ESLint
 
 No test suite is configured.
 
+## Git Workflow
+
+Single developer project. Work directly on `dev` branch for features and updates.
+
+- **dev** — working branch; commit features and updates here
+- **master** — stable release branch; merge from `dev` when features are tested and complete
+
+**Process:**
+1. Work on `dev` with descriptive commits
+2. Test changes locally (`npm run dev`)
+3. When a feature is solid, merge to `master`:
+   ```bash
+   git checkout master
+   git merge dev
+   git push origin master
+   ```
+
+## Commit Message Conventions
+
+Follow conventional commits format: `type(scope): description`
+
+**Types:**
+- `feat` — new feature
+- `fix` — bug fix
+- `chore` — maintenance, tooling, dependencies
+- `docs` — documentation
+- `style` — formatting, no code changes
+- `refactor` — code restructuring without behavior change
+- `perf` — performance improvements
+
+**Examples:**
+- `feat(projects): add new project entry to portfolio`
+- `fix(ProjectModal): resolve Action Buttons rendering issue`
+- `docs(README): update setup instructions`
+- `chore(deps): update React to v19`
+
 ## Architecture
 
 Single-page React portfolio with a fixed sidebar layout. All content is rendered in one page (`App.jsx`) with anchor-based scroll navigation.
