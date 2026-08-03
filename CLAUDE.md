@@ -21,6 +21,7 @@ Single developer project. Work directly on `dev` branch for features and updates
 - **master** — stable release branch; merge from `dev` when features are tested and complete
 
 **Process:**
+
 1. Work on `dev` with descriptive commits
 2. Test changes locally (`npm run dev`)
 3. When a feature is solid, merge to `master`:
@@ -35,6 +36,7 @@ Single developer project. Work directly on `dev` branch for features and updates
 Follow conventional commits format: `type(scope): description`
 
 **Types:**
+
 - `feat` — new feature
 - `fix` — bug fix
 - `chore` — maintenance, tooling, dependencies
@@ -44,6 +46,7 @@ Follow conventional commits format: `type(scope): description`
 - `perf` — performance improvements
 
 **Examples:**
+
 - `feat(projects): add new project entry to portfolio`
 - `fix(ProjectModal): resolve Action Buttons rendering issue`
 - `docs(README): update setup instructions`
@@ -75,6 +78,7 @@ src/
 ```
 
 **Layout structure** (`src/components/layout/`):
+
 - `Layout.jsx` — root shell: `flex-col lg:flex-row` with a sticky sidebar + scrollable main column
 - `Header.jsx` — renders `MobileNav` on small screens and `DesktopSidebar` on `lg+`
 - `Main.jsx` wraps section children; `Footer.jsx` sits at the bottom of the main column
@@ -82,6 +86,7 @@ src/
 **Sections** (`src/components/sections/`): `Hero`, `About`, `Experience`, `Projects`, `Contact` — mounted in order in `App.jsx`. Each section uses `id` attributes matching the anchor links in `src/data/navigation.js`.
 
 **Data layer** (`src/data/`): All content is static JS exports. To update portfolio content, edit these files — no component changes needed:
+
 - `projects.js` — `projectsData` array; each entry has `id`, `title`, `description`, `longDescription`, `images`, `tags`, `features`, `challenges`, `links`
 - `experiences.js` — `experienceData` array with `company`, `title`, `period`, `responsibilities`
 - `navigation.js` — `NAV_LINKS` array of `{ name, href }` anchor pairs
@@ -94,6 +99,7 @@ src/
 Tailwind v4 via the `@tailwindcss/vite` plugin (configured in `vite.config.js`, not `tailwind.config.js`). DaisyUI v5 is layered on top with a **`d-` prefix** — all DaisyUI component classes must be prefixed (e.g., `d-btn`, `d-modal`, `d-badge`).
 
 CSS is split into themed partials under `src/styles/` and imported via `src/index.css`:
+
 - `themes.css` — DaisyUI theme overrides; dark theme is default (`--default --prefersdark`)
 - `typography.css`, `components.css`, `utilities.css`, `base.css` — custom layer styles
 

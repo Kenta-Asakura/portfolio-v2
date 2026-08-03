@@ -3,7 +3,7 @@ import DesktopSidebar from './DesktopSidebar';
 
 function Header() {
   return (
-     <>
+    <>
       <MobileNav />
       <DesktopSidebar />
     </>

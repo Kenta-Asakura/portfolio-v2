@@ -5,9 +5,12 @@
 
 .article {
   max-width: 65ch;
-  
+
   /* Headings */
-  & h1, & h2, & h3, & h4 {
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
     font-weight: 700;
     line-height: 1.25;
     color: var(--color-base-content);
@@ -68,18 +71,21 @@
   }
 
   /* Emphasis */
-  & strong, & b {
+  & strong,
+  & b {
     font-weight: 600;
     color: var(--color-primary);
   }
 
-  & em, & i {
+  & em,
+  & i {
     font-style: italic;
     color: var(--color-base-content);
   }
 
   /* Lists */
-  & ul, & ol {
+  & ul,
+  & ol {
     margin-bottom: 1.25rem;
     padding-left: 1.75rem;
   }
@@ -113,7 +119,8 @@
   }
 
   /* Nested lists */
-  & li > ul, & li > ol {
+  & li > ul,
+  & li > ol {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
   }
@@ -177,7 +184,10 @@
     line-height: 1.6;
   }
 
-  & h1, & h2, & h3, & h4 {
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
     margin-bottom: 0.75rem;
   }
 
