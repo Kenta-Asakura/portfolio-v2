@@ -1,11 +1,6 @@
 function Main({ children }) {
   return (
-    <main 
-      id="main-content"
-      className="flex-1 w-full"
-      role="main"
-      aria-label="Main content"
-    >
+    <main id="main-content" className="w-full flex-1" role="main" aria-label="Main content">
       {children}
     </main>
   );

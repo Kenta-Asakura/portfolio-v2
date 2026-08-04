@@ -1,8 +1,8 @@
-import { useState } from "react";
-import SocialLinks from "../ui/SocialLinks";
-import NavLinks from "../ui/NavLinks";
+import { useState } from 'react';
+import SocialLinks from '../ui/SocialLinks';
+import NavLinks from '../ui/NavLinks';
 
-function MobileNav () {
+function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handle toggle button click
@@ -15,7 +15,7 @@ function MobileNav () {
     setIsMenuOpen(false);
     document.getElementById('my-drawer-3').checked = false;
   };
-  
+
   const handleNavClick = (e) => {
     closeDrawer();
 
@@ -29,10 +29,10 @@ function MobileNav () {
       if (element) {
         const offset = 20;
         const elementPosition = element.offsetTop - offset;
-        
+
         window.scrollTo({
           top: elementPosition,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     }
@@ -41,31 +41,27 @@ function MobileNav () {
   return (
     <>
       {/* Mobile Top Bar */}
-      <header 
-        className="lg:hidden d-navbar fixed z-20 bg-base-100 backdrop-blur-sm shadow-md"
+      <header
+        className="d-navbar bg-base-100 fixed z-20 shadow-md backdrop-blur-sm lg:hidden"
         role="banner"
       >
         <nav className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <a 
-              href="#hero" 
-              className="d-btn d-btn-ghost text-xl"
-              onClick={handleNavClick}
-            >
-              <span className="text-2xl font-bold text-primary">K</span>
+            <a href="#hero" className="d-btn d-btn-ghost text-xl" onClick={handleNavClick}>
+              <span className="text-primary text-2xl font-bold">K</span>
             </a>
 
             {/* Mobile Menu Toggle Button */}
-            <label 
+            <label
               htmlFor="my-drawer-3"
               className="d-swap d-swap-rotate d-drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
               onClick={handleToggle}
             >
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 checked={isMenuOpen}
                 onChange={(e) => setIsMenuOpen(e.target.checked)}
                 aria-hidden="true"
@@ -99,27 +95,22 @@ function MobileNav () {
       </header>
 
       {/* Mobile Sidebar */}
-      <aside 
+      <aside
         className="d-drawer d-drawer-end w-auto"
         role="navigation"
         aria-label="Main navigation"
       >
-        <input 
-          id="my-drawer-3"
-          type="checkbox"
-          className="d-drawer-toggle" 
-          checked={isMenuOpen}
-        />
-    
+        <input id="my-drawer-3" type="checkbox" className="d-drawer-toggle" checked={isMenuOpen} />
+
         <nav className="d-drawer-side">
-          <label 
-            htmlFor="my-drawer-3" 
-            aria-label="close sidebar" 
+          <label
+            htmlFor="my-drawer-3"
+            aria-label="close sidebar"
             className="d-drawer-overlay"
             onClick={closeDrawer}
           ></label>
 
-          <div className="d-menu bg-base-100 justify-center gap-7 min-h-full px-4 py-8">
+          <div className="d-menu bg-base-100 min-h-full justify-center gap-7 px-4 py-8">
             <NavLinks handleNavClick={handleNavClick} />
 
             <div className="flex gap-x-3.5">
@@ -127,9 +118,9 @@ function MobileNav () {
             </div>
           </div>
         </nav>
-      </aside>  
+      </aside>
     </>
-  )
+  );
 }
 
 export default MobileNav;

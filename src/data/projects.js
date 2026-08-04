@@ -19,7 +19,7 @@ export const projectsData = [
       'Built a full-featured React-based multi-page marketing website for a fictional photo-sharing app. This project enhanced my understanding of React props for dynamic rendering and improved my skills in managing reusable and scalable component structures. The website features multiple pages with consistent navigation and responsive design.',
     images: {
       desktop: photosnapDesktop,
-    //   mobile: photosnapMobile,
+      //   mobile: photosnapMobile,
       alt: 'Photosnap marketing website showcasing photo-sharing app features',
     },
     tags: ['React', 'Sass', 'Figma'],
@@ -72,7 +72,7 @@ export const projectsData = [
       'Developed a scalable and modular weather application featuring clean, maintainable code architecture. The application integrates real-time weather data through an external API to provide users with accurate and up-to-date weather information. Built with TypeScript for type safety and better developer experience.',
     images: {
       desktop: weatherDesktop,
-    //  ! mobile: weatherMobile,
+      //  ! mobile: weatherMobile,
       alt: 'WeatherVibez application displaying current weather conditions and forecast',
     },
     tags: ['TypeScript', 'Sass', 'Webpack'],

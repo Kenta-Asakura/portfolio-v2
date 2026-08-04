@@ -1,5 +1,5 @@
-import NavLinks from "../ui/NavLinks";
-import SocialLinks from "../ui/SocialLinks";
+import NavLinks from '../ui/NavLinks';
+import SocialLinks from '../ui/SocialLinks';
 
 function DesktopSidebar() {
   const handleNavClick = (e) => {
@@ -12,38 +12,36 @@ function DesktopSidebar() {
       if (element) {
         const offset = 20;
         const elementPosition = element.offsetTop - offset;
-        
+
         window.scrollTo({
           top: elementPosition,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       }
     }
   };
 
   return (
-    <aside 
-      className="hidden lg:block sticky top-0 h-screen"
+    <aside
+      className="sticky top-0 hidden h-screen lg:block"
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="d-menu bg-base-100 justify-cente
-      
-      r gap-4 min-h-full px-4 py-8">
-        <a 
+      <div className="d-menu bg-base-100 justify-cente r min-h-full gap-4 px-4 py-8">
+        <a
           href="#hero"
           onClick={handleNavClick}
-          className="rounded-lg pl-4 mb-8 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="focus:ring-primary mb-8 rounded-lg pl-4 focus:ring-2 focus:ring-offset-2 focus:outline-none"
         >
-          <h1 className="text-2xl font-bold text-primary">K</h1>
+          <h1 className="text-primary text-2xl font-bold">K</h1>
         </a>
 
         <NavLinks handleNavClick={handleNavClick} />
 
         <div className="d-fab items-center">
-          <div 
-            tabIndex={0} 
-            role="button" 
+          <div
+            tabIndex={0}
+            role="button"
             className="d-btn d-btn-outline d-btn-lg d-btn-circle d-btn-primary"
           >
             <svg
@@ -62,17 +60,17 @@ function DesktopSidebar() {
             </svg>
           </div>
 
-          <div className="flex flex-col gap-2.5 mb-4">
+          <div className="mb-4 flex flex-col gap-2.5">
             <SocialLinks />
           </div>
 
-          <div className="d-fab-close"> 
+          <div className="d-fab-close">
             <span className="d-btn d-btn-circle d-btn-lg d-btn-primary mx-auto">✕</span>
           </div>
         </div>
       </div>
     </aside>
-  )
+  );
 }
 
 export default DesktopSidebar;

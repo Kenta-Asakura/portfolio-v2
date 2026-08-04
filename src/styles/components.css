@@ -5,11 +5,11 @@
 
 /* About Section - Avatar Overlay Animation */
 .about-avatar {
-  --s: 300px;   /* Size */
-  --b: 2.5px;   /* Border thickness */
-  --g: 14px;    /* Gap */
+  --s: 300px; /* Size */
+  --b: 2.5px; /* Border thickness */
+  --g: 14px; /* Gap */
   --c: oklch(75% 0.16 182.5); /* Primary color from theme */
-  
+
   width: var(--s);
   aspect-ratio: 1;
   outline: calc(var(--s) / 2) solid rgba(0, 0, 0, 0.5);
