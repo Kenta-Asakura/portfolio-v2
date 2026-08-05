@@ -19,13 +19,13 @@ describe('Projects section', () => {
     render(<Projects />);
 
     await user.click(
-      screen.getByRole('button', { name: new RegExp(`view details for ${firstProject.title}`, 'i') }),
+      screen.getByRole('button', {
+        name: new RegExp(`view details for ${firstProject.title}`, 'i'),
+      }),
     );
 
     expect(screen.getByRole('dialog')).toBeInTheDocument();
-    expect(
-      screen.getByRole('heading', { level: 3, name: firstProject.title }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: firstProject.title })).toBeInTheDocument();
 
     await user.click(screen.getByRole('button', { name: /close modal/i }));
 
