@@ -2,7 +2,7 @@ import ChevronIcon from './ChevronIcon';
 
 function ProjectModal({ project, onClose }) {
   return (
-    <dialog className="d-modal d-modal-open" aria-labelledby="modal-title" role="dialog">
+    <dialog open className="d-modal d-modal-open" aria-labelledby="modal-title" role="dialog">
       <div className="d-modal-box max-h-[90vh] max-w-4xl overflow-y-auto">
         {/* Close Button */}
         <button
