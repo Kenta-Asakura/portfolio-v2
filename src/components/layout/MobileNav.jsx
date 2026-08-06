@@ -98,7 +98,7 @@ function MobileNav() {
       <aside
         className="d-drawer d-drawer-end w-auto"
         role="navigation"
-        aria-label="Main navigation"
+        aria-label="Mobile navigation"
       >
         <input id="my-drawer-3" type="checkbox" className="d-drawer-toggle" checked={isMenuOpen} />
 

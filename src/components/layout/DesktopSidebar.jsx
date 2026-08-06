@@ -25,7 +25,7 @@ function DesktopSidebar() {
     <aside
       className="sticky top-0 hidden h-screen lg:block"
       role="navigation"
-      aria-label="Main navigation"
+      aria-label="Desktop navigation"
     >
       <div className="d-menu bg-base-100 justify-cente r min-h-full gap-4 px-4 py-8">
         <a
