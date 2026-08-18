@@ -6,7 +6,7 @@ test.describe('Desktop sidebar navigation', () => {
   });
 
   test('sidebar is visible and mobile nav is hidden', async ({ page }) => {
-    await expect(page.getByRole('navigation', { name: 'Main navigation' }).last()).toBeVisible();
+    await expect(page.getByRole('navigation', { name: 'Desktop navigation' }).last()).toBeVisible();
     await expect(page.getByRole('banner')).toBeHidden();
   });
 
