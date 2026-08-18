@@ -20,6 +20,8 @@ export const projectsData = [
     images: {
       desktop: photosnapDesktop,
       //   mobile: photosnapMobile,
+      width: 1883,
+      height: 1046,
       alt: 'Photosnap marketing website showcasing photo-sharing app features',
     },
     tags: ['React', 'Sass', 'Figma'],
@@ -73,6 +75,8 @@ export const projectsData = [
     images: {
       desktop: weatherDesktop,
       //  ! mobile: weatherMobile,
+      width: 1930,
+      height: 943,
       alt: 'WeatherVibez application displaying current weather conditions and forecast',
     },
     tags: ['TypeScript', 'Sass', 'Webpack'],

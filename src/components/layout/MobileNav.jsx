@@ -55,6 +55,7 @@ function MobileNav() {
             {/* Mobile Menu Toggle Button */}
             <label
               htmlFor="my-drawer-3"
+              role="button"
               className="d-swap d-swap-rotate d-drawer-button text-primary"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
@@ -95,14 +96,10 @@ function MobileNav() {
       </header>
 
       {/* Mobile Sidebar */}
-      <aside
-        className="d-drawer d-drawer-end w-auto"
-        role="navigation"
-        aria-label="Mobile navigation"
-      >
+      <aside className="d-drawer d-drawer-end w-auto">
         <input id="my-drawer-3" type="checkbox" className="d-drawer-toggle" checked={isMenuOpen} />
 
-        <nav className="d-drawer-side">
+        <nav className="d-drawer-side" aria-label="Mobile navigation">
           <label
             htmlFor="my-drawer-3"
             aria-label="close sidebar"

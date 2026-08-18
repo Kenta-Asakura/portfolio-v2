@@ -17,7 +17,14 @@ function ProjectCard({ project, onSelect }) {
       aria-label={`View details for ${project.title}`}
     >
       <figure>
-        <img src={project.images.desktop} alt={project.title} className="w-full object-cover" />
+        <img
+          src={project.images.desktop}
+          alt={project.title}
+          width={project.images.width}
+          height={project.images.height}
+          loading="lazy"
+          className="w-full object-cover"
+        />
       </figure>
 
       <div className="d-card-body">
