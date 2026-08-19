@@ -15,11 +15,14 @@ npm run test         # Run Vitest unit/component tests
 npm run test:watch   # Run Vitest in watch mode
 npm run test:e2e     # Run Playwright end-to-end tests
 npm run test:e2e:ui  # Run Playwright tests in UI mode
+npm run test:lighthouse # Build then run Lighthouse CI (perf/a11y/best-practices/seo, threshold 0.9)
 ```
 
 Unit/component tests live alongside the components they cover (`*.test.jsx`) and run under Vitest + React Testing Library (`src/test/setup.js`). End-to-end tests live in `e2e/` and run under Playwright against a local dev server — desktop-only specs are named `*.desktop.spec.js` and mobile-only specs `*.mobile.spec.js` (see `playwright.config.js` for how projects map to those patterns).
 
-CI (`.github/workflows/ci.yml`) runs on push/PR to `dev` and `master`: lint, format:check, test, build in one job, and a separate `e2e` job that installs Playwright browsers and runs the e2e suite, uploading the HTML report as an artifact.
+Lighthouse CI (`@lhci/cli`) audits the production build (`dist/`, served as static files) against `lighthouserc.cjs` — 3 runs with the desktop preset, asserting Performance/Accessibility/Best Practices/SEO all ≥ 0.9. Reports land in `.lighthouseci/` (gitignored, regenerated each run).
+
+CI (`.github/workflows/ci.yml`) runs on push/PR to `dev` and `master`: lint, format:check, test, build in one job; a separate `e2e` job that installs Playwright browsers and runs the e2e suite, uploading the HTML report as an artifact; and a separate `lighthouse` job that builds and runs Lighthouse CI, uploading the JSON reports as an artifact — a failing category score fails the job and blocks merge.
 
 ## Git Workflow
 
@@ -90,7 +93,7 @@ src/
 └── utils/                 # Shared utility functions
 ```
 
-Root-level config: `vite.config.js` (also holds Vitest's `test` block), `eslint.config.js` (flat config; includes a Node-globals override for `*.config.js` and `e2e/**`), `playwright.config.js`.
+Root-level config: `vite.config.js` (also holds Vitest's `test` block), `eslint.config.js` (flat config; includes a Node-globals override for `*.config.js` and `e2e/**`), `playwright.config.js`, `lighthouserc.cjs`.
 
 **Layout structure** (`src/components/layout/`):
 
